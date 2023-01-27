@@ -50,13 +50,16 @@ a {
 
 body {
   width: 100vw;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
   overflow-x: hidden;
   background-color: var(--color5);
 }
 
 header {
   width: 100%;
-  height: 10%;
+  height: 10vh;
   background-color: var(--color3);
   color: var(--color1);
   font-family: var(--fontFam1);
@@ -70,7 +73,7 @@ header {
 
 nav {
   width: 100vw;
-  height: 5%;
+  height: 5vh;
   font-size: 1.5rem;
   justify-content: space-around !important;
   background-color: var(--color2);
@@ -88,6 +91,7 @@ nav a {
 
 main {
   width: 100vw;
+  height: 100%;
   background-color:var(--color5);
 }
 
