@@ -1,6 +1,12 @@
 :root {
   --fontSize1: 2rem; 
-
+  --color1: #F0EAD2;
+  --color2: #DDE5B6;
+  --color3: #ADC178;
+  --color4: #A98467;
+  --color5: #6C584C;
+  --fontFam1: 'Bubblegum Sans', cursive;
+  --fontFam2: 'Open Sans', sans-serif;
 }
 
 html {
@@ -8,14 +14,25 @@ html {
 }
 
 h1 {
-  font-size: 2.2rem;
+  font-size: 2.5rem;
+  font-family: var(--fontFam1);
 }
+
 h2 {
   font-size: 1.6rem;
+  font-family: var(--fontFam2);
 }
 
 h3 {
   font-size: 1.3rem;
+}
+
+p {
+  font-family: var(--fontFam2);
+}
+
+a {
+  font-family: var(--fontFam2);
 }
 
 .flexCenter {
@@ -33,27 +50,81 @@ h3 {
 
 body {
   width: 100vw;
-  height: 100vh;
-  background-color: blue;
+  overflow-x: hidden;
+  background-color: var(--color5);
 }
 
 header {
-  font-size: var(--fontSize1);
   width: 100%;
-  height: 15%;
-  background-color: azure;
+  height: 10%;
+  background-color: var(--color3);
+  color: var(--color1);
+  font-family: var(--fontFam1);
+}
+
+.fa-utensils{
+  font-size: 2.5rem;
+  color:var(--color1);
+  margin-right: 5%;
+}
+
+nav {
+  width: 100vw;
+  height: 5%;
+  font-size: 1.5rem;
+  justify-content: space-around !important;
+  background-color: var(--color2);
+}
+
+nav a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: auto;
+  text-decoration: none;
+  color: var(--color5);
 }
 
 main {
-  font-size: var(--fontSize1);
-  width: 100% ;
-  height: 70%;
-  background-color: grey;
+  width: 100vw;
+  background-color:var(--color5);
 }
 
-footer { 
-  font-size: var(--fontSize1);
-  width: 100%;
-  height: 15%;
-  background-color: blanchedalmond;
+main h1 {
+  color: var(--color1);
 }
+
+.DayBox {
+  width: 90%;
+  height: 15%;
+  background-color: var(--color4);
+  border-radius: 15px;
+  margin-bottom: 10%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.DayBox h2 {
+  margin-left: 2%;
+  color: var(--color1);
+}
+
+.DayBox div {
+  display: flex;
+  margin-right: 30%;
+}
+
+.DayBox button {
+  font-size: 1.3rem;
+  appearance: none;
+  background-color: var(--color1);
+  border: none;
+  border-radius: 10px;
+  padding: 10%;
+  color: var(--color5);
+  margin-left: 25%;
+}
+
+
