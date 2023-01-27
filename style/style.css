@@ -1,0 +1,59 @@
+:root {
+  --fontSize1: 2rem; 
+
+}
+
+html {
+  font-size: calc(60% + 0.8vmin);
+}
+
+h1 {
+  font-size: 2.2rem;
+}
+h2 {
+  font-size: 1.6rem;
+}
+
+h3 {
+  font-size: 1.3rem;
+}
+
+.flexCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flexCenterC {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  background-color: blue;
+}
+
+header {
+  font-size: var(--fontSize1);
+  width: 100%;
+  height: 15%;
+  background-color: azure;
+}
+
+main {
+  font-size: var(--fontSize1);
+  width: 100% ;
+  height: 70%;
+  background-color: grey;
+}
+
+footer { 
+  font-size: var(--fontSize1);
+  width: 100%;
+  height: 15%;
+  background-color: blanchedalmond;
+}
