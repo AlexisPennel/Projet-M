@@ -26,14 +26,14 @@
         <a href="#">Shopping list</a>
     </nav>
 
-    <main class="flexCenterC">
+    <main class="flexCenterC" id="main">
 
         <h1>Select your menu</h1>
 
         <div class="DayBox">
             <h2>Monday</h2>
             <div>
-                <button>Lunch</button>
+                <button id="lunch">Lunch</button>
                 <button>Dinner</button>
             </div>
         </div>
@@ -41,48 +41,61 @@
         <div class="DayBox">
             <h2>Tuesday</h2>
             <div>
-                <button>Lunch</button>
+                <button id="lunch">Lunch</button>
                 <button>Dinner</button>
             </div>
         </div>
         <div class="DayBox">
             <h2>Wednesday</h2>
             <div>
-                <button>Lunch</button>
+                <button id="lunch">Lunch</button>
                 <button>Dinner</button>
             </div>
         </div>
         <div class="DayBox">
             <h2>Thursday</h2>
             <div>
-                <button>Lunch</button>
+                <button id="lunch">Lunch</button>
                 <button>Dinner</button>
             </div>
         </div>
         <div class="DayBox">
             <h2>Friday</h2>
             <div>
-                <button>Lunch</button>
+                <button id="lunch">Lunch</button>
                 <button>Dinner</button>
             </div>
         </div>
         <div class="DayBox">
             <h2>Saturday</h2>
             <div>
-                <button>Lunch</button>
+                <button id="lunch">Lunch</button>
                 <button>Dinner</button>
             </div>
         </div>
         <div class="DayBox">
             <h2>Sunday</h2>
             <div>
-                <button>Lunch</button>
+                <button id="lunch">Lunch</button>
                 <button>Dinner</button>
             </div>
         </div>
 
 
     </main>
+    <div class="popUp visibilityHidden flexCenterC" id="popUp">
+
+        <div class="flexCenter popUpTitle">
+            <a href="../html/index.html" class="returnArrow">
+                <i class="fa-solid fa-arrow-left"></i>
+            </a>
+            <h1>Select one</h1>
+        </div>
+        <div id="cardContainer" class="cardContainer flexCenterC">
+        </div>
+        <button id="popUpButton">Valider</button>
+        
+    </div>
 </body>
 
 </html>

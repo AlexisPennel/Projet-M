@@ -1,10 +1,12 @@
 :root {
   --fontSize1: 2rem; 
   --color1: #F0EAD2;
+  --color1-trans: #f0ead286;
   --color2: #DDE5B6;
   --color3: #ADC178;
   --color4: #A98467;
   --color5: #6C584C;
+  --color5-trans: #6c584cda;
   --fontFam1: 'Bubblegum Sans', cursive;
   --fontFam2: 'Open Sans', sans-serif;
 }
@@ -47,6 +49,12 @@ a {
   align-items: center;
   flex-direction: column;
 }
+
+.visibilityHidden {
+  height: 0;
+  width: 0;
+  visibility: hidden;
+};
 
 body {
   width: 100vw;
@@ -92,17 +100,23 @@ nav a {
 main {
   width: 100vw;
   height: 100%;
-  background-color:var(--color5);
+  background-image: url(../images/background.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 main h1 {
-  color: var(--color1);
+  color: var(--color5);
+  background-color: var(--color1-trans);
+  padding: 3%;
+  border-radius: 5%;
+
 }
 
 .DayBox {
   width: 90%;
   height: 15%;
-  background-color: var(--color4);
+  background-color: var(--color5-trans);
   border-radius: 15px;
   margin-bottom: 10%;
   display: flex;
@@ -129,6 +143,71 @@ main h1 {
   padding: 10%;
   color: var(--color5);
   margin-left: 25%;
+  cursor: pointer;
 }
 
+.popUp {
+  width: 100%;
+  height: 100%;
+  background-color:var(--color3);
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  
+}
 
+.popUpTitle {
+  width: 100%;
+  justify-content: flex-start;
+  align-items: center;
+  margin-left: 20%;
+  color: var(--color5);
+}
+
+.fa-arrow-left {
+  font-size: 2.3rem;
+}
+
+.returnArrow {
+  text-decoration: none;
+  color: var(--color5);
+  margin-right: 20%;
+}
+
+.cardContainer {
+  width: 100vw;
+  height: 90%;
+}
+
+.popUpCard {
+  width: 80%;
+  height: 20%;
+  background-color: var(--color1);
+  margin-bottom: 3%;
+  border-radius: 2%;
+  text-decoration: none;
+  color: var(--color5);
+  font-family: var(--fontFam2);
+}
+
+.popUpCard:hover {
+  box-shadow: 0px 5px 30px 0px rgba(0, 0, 0, 0.349);
+}
+
+.popUpCardSelect {
+  color: var(--color3);
+  font-size: 1.4rem;
+}
+
+.popUp button {
+  width: 30%;
+  height: 10%;
+  margin-bottom: 25%;
+  border:none;
+  background-color:var(--color2);
+  font-size: 1.7rem;
+  color: var(--color5);
+  font-family: var(--fontFam2);
+}
