@@ -33,7 +33,7 @@
         <div class="DayBox">
             <h2>Monday</h2>
             <div>
-                <button id="lunch">Lunch</button>
+                <button id="mondayLunch" class="">Lunch</button>
                 <button>Dinner</button>
             </div>
         </div>
@@ -41,60 +41,80 @@
         <div class="DayBox">
             <h2>Tuesday</h2>
             <div>
-                <button id="lunch">Lunch</button>
+                <button id="tuesdayLunch">Lunch</button>
                 <button>Dinner</button>
             </div>
         </div>
         <div class="DayBox">
             <h2>Wednesday</h2>
             <div>
-                <button id="lunch">Lunch</button>
+                <button id="wednesdayLunch">Lunch</button>
                 <button>Dinner</button>
             </div>
         </div>
         <div class="DayBox">
             <h2>Thursday</h2>
             <div>
-                <button id="lunch">Lunch</button>
+                <button id="thursdayLunch">Lunch</button>
                 <button>Dinner</button>
             </div>
         </div>
         <div class="DayBox">
             <h2>Friday</h2>
             <div>
-                <button id="lunch">Lunch</button>
+                <button id="fridayLunch">Lunch</button>
                 <button>Dinner</button>
             </div>
         </div>
         <div class="DayBox">
             <h2>Saturday</h2>
             <div>
-                <button id="lunch">Lunch</button>
+                <button id="saturdayLunch">Lunch</button>
                 <button>Dinner</button>
             </div>
         </div>
         <div class="DayBox">
             <h2>Sunday</h2>
             <div>
-                <button id="lunch">Lunch</button>
+                <button id="sundayLunch">Lunch</button>
                 <button>Dinner</button>
             </div>
         </div>
-
+        <button class="validateButton" id="validateButton">Validate</button>
 
     </main>
-    <div class="popUp visibilityHidden flexCenterC" id="popUp">
-
+    <!-- popup MONDAY -->
+    <div class="popUp visibilityHidden flexCenterC" id="popUpMonday">
         <div class="flexCenter popUpTitle">
-            <a href="../html/index.html" class="returnArrow">
+            <a href="#" class="returnArrow">
                 <i class="fa-solid fa-arrow-left"></i>
             </a>
-            <h1>Select one</h1>
+            <h1>Select one <br>and validate</h1>
         </div>
-        <div id="cardContainer" class="cardContainer flexCenterC">
+
+        <div id="cardContainerMonday" class="cardContainer flexCenterC">
         </div>
-        <button id="popUpButton">Valider</button>
-        
+
+        <div class="buttons__container flexCenter">
+            <i class="fa-solid fa-arrow-rotate-left" id="resetButtonMonday"></i>
+            <button id="popUpButtonMonday">Validate</button>
+        </div>
+    </div>
+
+<!-- popup TUESDAY -->
+    <div class="popUp visibilityHidden flexCenterC" id="popUpTuesday">
+        <div class="flexCenter popUpTitle">
+            <a href="#" class="returnArrow">
+                <i class="fa-solid fa-arrow-left"></i>
+            </a>
+            <h1>Select one <br>and validate</h1>
+        </div>
+        <div id="cardContainerTuesday" class="cardContainer flexCenterC">
+        </div>
+        <div class="buttons__container flexCenter">
+            <i class="fa-solid fa-arrow-rotate-left" id="resetButtonTuesday"></i>
+            <button id="popUpButtonTuesday">Validate</button>
+        </div>
     </div>
 </body>
 
