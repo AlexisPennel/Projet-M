@@ -118,7 +118,7 @@ main h1 {
 }
 
 .DayBox {
-  width: 90%;
+  width: 96%;
   height: 15%;
   background-color: var(--color5-trans);
   border-radius: 15px;
@@ -139,15 +139,22 @@ main h1 {
 }
 
 .DayBox button {
-  font-size: 1.3rem;
+  font-size: 1rem;
   appearance: none;
   background-color: var(--color1);
   border: none;
   border-radius: 10px;
   padding: 10%;
   color: var(--color5);
-  margin-left: 25%;
+  margin-left: 5%;
   cursor: pointer;
+}
+
+.DayBox button:active {
+  transform:scale(1.1);
+  box-shadow:  0px 0px 30px 10px rgba(0, 0, 0, 0.226);
+  transition: all 150ms ease-in-out;
+  transform-origin: center;
 }
 
 .buttonSelected {
