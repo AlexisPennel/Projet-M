@@ -7,7 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/36db748ff7.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../style/style.css">
-    <script src="../script/script.js" defer></script>
+    <script src="../script/script.js" type="module" defer></script>
+    <script src="../script/scriptTuesday.js" type="module" defer></script>
+    <script src="../script/scriptWednesday.js" type="module" defer></script>
+    <script src="../script/scriptThursday.js" type="module" defer></script>
     <link rel="stylesheet" href="../style/normalize.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -80,7 +83,10 @@
                 <button>Dinner</button>
             </div>
         </div>
-        <button class="validateButton" id="validateButton">Validate</button>
+        <div class="mainButtons flexCenter">
+            <button class="validateButton" id="newPlan">New plan +</button>
+            <button class="validateButton" id="validateButton">Validate</button>
+        </div>
 
     </main>
     <!-- popup MONDAY -->
@@ -101,7 +107,7 @@
         </div>
     </div>
 
-<!-- popup TUESDAY -->
+    <!-- popup TUESDAY -->
     <div class="popUp visibilityHidden flexCenterC" id="popUpTuesday">
         <div class="flexCenter popUpTitle">
             <a href="#" class="returnArrow">
@@ -114,6 +120,38 @@
         <div class="buttons__container flexCenter">
             <i class="fa-solid fa-arrow-rotate-left" id="resetButtonTuesday"></i>
             <button id="popUpButtonTuesday">Validate</button>
+        </div>
+    </div>
+
+    <!-- popup WEDNESDAY -->
+    <div class="popUp visibilityHidden flexCenterC" id="popUpWednesday">
+        <div class="flexCenter popUpTitle">
+            <a href="#" class="returnArrow">
+                <i class="fa-solid fa-arrow-left"></i>
+            </a>
+            <h1>Select one <br>and validate</h1>
+        </div>
+        <div id="cardContainerWednesday" class="cardContainer flexCenterC">
+        </div>
+        <div class="buttons__container flexCenter">
+            <i class="fa-solid fa-arrow-rotate-left" id="resetButtonWednesday"></i>
+            <button id="popUpButtonWednesday">Validate</button>
+        </div>
+    </div>
+
+     <!-- popup Thursday -->
+     <div class="popUp visibilityHidden flexCenterC" id="popUpThursday">
+        <div class="flexCenter popUpTitle">
+            <a href="#" class="returnArrow">
+                <i class="fa-solid fa-arrow-left"></i>
+            </a>
+            <h1>Select one <br>and validate</h1>
+        </div>
+        <div id="cardContainerThursday" class="cardContainer flexCenterC">
+        </div>
+        <div class="buttons__container flexCenter">
+            <i class="fa-solid fa-arrow-rotate-left" id="resetButtonThursday"></i>
+            <button id="popUpButtonThursday">Validate</button>
         </div>
     </div>
 </body>
