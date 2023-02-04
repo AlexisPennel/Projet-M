@@ -1,6 +1,15 @@
 :root {
-  --fontSize1: 2rem; 
-
+  --fontSize1: 2rem;
+  --color1: #f0ead2;
+  --color1-trans: #f0ead2a6;
+  --color2: #dde5b6;
+  --color3: #adc178;
+  --color3bis: #8d9e5f;
+  --color4: #a98467;
+  --color5: #6c584c;
+  --color5-trans: #6c584cda;
+  --fontFam1: "Bubblegum Sans", cursive;
+  --fontFam2: "Open Sans", sans-serif;
 }
 
 html {
@@ -8,14 +17,25 @@ html {
 }
 
 h1 {
-  font-size: 2.2rem;
+  font-size: 2.5rem;
+  font-family: var(--fontFam1);
 }
+
 h2 {
   font-size: 1.6rem;
+  font-family: var(--fontFam2);
 }
 
 h3 {
   font-size: 1.3rem;
+}
+
+p {
+  font-family: var(--fontFam2);
+}
+
+a {
+  font-family: var(--fontFam2);
 }
 
 .flexCenter {
@@ -31,29 +51,224 @@ h3 {
   flex-direction: column;
 }
 
+.visibilityHidden {
+  height: 0;
+  width: 0;
+  visibility: hidden;
+}
+
 body {
   width: 100vw;
-  height: 100vh;
-  background-color: blue;
+  height: auto;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  overflow: scroll;
+  background-image: url(../images/background.jpg);
+  background-size:auto;
+  background-position: auto;
+  background-repeat: no-repeat;
 }
 
 header {
-  font-size: var(--fontSize1);
   width: 100%;
-  height: 15%;
-  background-color: azure;
+  height: 10vh;
+  background-color: var(--color3);
+  color: var(--color1);
+  font-family: var(--fontFam1);
+}
+
+.fa-utensils {
+  font-size: 2.5rem;
+  color: var(--color1);
+  margin-right: 5%;
+}
+
+nav {
+  width: 100vw;
+  height: 5vh;
+  font-size: 1.5rem;
+  justify-content: space-around !important;
+  background-color: var(--color2);
+}
+
+nav a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: auto;
+  text-decoration: none;
+  color: var(--color5);
 }
 
 main {
-  font-size: var(--fontSize1);
-  width: 100% ;
-  height: 70%;
-  background-color: grey;
+  width: 100vw;
+  /* background-image: url(../images/background.jpg);
+  background-size: cover;
+  background-repeat: no-repeat; */
 }
 
-footer { 
-  font-size: var(--fontSize1);
-  width: 100%;
+main h1 {
+  color: var(--color5);
+  background-color: var(--color1-trans);
+  padding: 3%;
+  border-radius: 5%;
+}
+
+.DayBox {
+  width: 96%;
   height: 15%;
-  background-color: blanchedalmond;
+  background-color: var(--color5-trans);
+  border-radius: 15px;
+  margin-bottom: 10%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.DayBox h2 {
+  margin-left: 2%;
+  color: var(--color1);
+}
+
+.DayBox div {
+  display: flex;
+  margin-right: 30%;
+}
+
+.DayBox button {
+  font-size: 1rem;
+  appearance: none;
+  background-color: var(--color1);
+  border: none;
+  border-radius: 10px;
+  padding: 10%;
+  color: var(--color5);
+  margin-left: 5%;
+  cursor: pointer;
+}
+
+.DayBox button:active {
+  transform:scale(1.1);
+  box-shadow:  0px 0px 30px 10px rgba(0, 0, 0, 0.226);
+  transition: all 150ms ease-in-out;
+  transform-origin: center;
+}
+
+.buttonSelected {
+ background-color: var(--color3) !important;
+}
+
+.mainButtons { 
+  width: 100%;
+  justify-content: space-evenly !important;
+}
+
+.validateButton {
+  width: 30%;
+  height: 4rem;
+  margin-bottom: 20%;
+  font-size: 1.4rem;
+  background-color: var(--color3);
+  border: none;
+  font-family: var(--fontFam2);
+  cursor: pointer;
+}
+
+.validateButton:active {
+  transform:scale(1.1);
+  box-shadow:  0px 0px 30px 10px rgba(0, 0, 0, 0.226);
+  transition: all 150ms ease-in-out;
+  transform-origin: center;
+}
+
+.popUp {
+  width: 100%;
+  height: 100rem;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--color3);
+  position: absolute;
+  overflow: hidden; 
+}
+
+.popUpTitle {
+  width: 100%;
+  justify-content: flex-start;
+  align-items: center;
+  margin-left: 10%;
+  color: var(--color5);
+}
+
+.fa-arrow-left {
+  font-size: 2.3rem;
+}
+
+.returnArrow {
+  text-decoration: none;
+  color: var(--color5);
+  margin-right: 20%;
+}
+
+.cardContainer {
+  width: 80%;
+  height: 90%;
+}
+
+.popUpCard {
+  width: 80%;
+  height: 20%;
+  background-color: var(--color1);
+  margin-bottom: 3%;
+  border-radius: 2%;
+  text-decoration: none;
+  color: var(--color5);
+  font-family: var(--fontFam2);
+  text-align: center;
+}
+
+.popUpCard:hover {
+  box-shadow: 0px 5px 30px 0px rgba(0, 0, 0, 0.349);
+}
+
+.popUpCardSelect {
+  color: var(--color3);
+  font-size: 1.4rem;
+}
+
+.popUpCardSelectMonday {
+  color: var(--color3);
+  font-size: 1.4rem;
+}
+
+.buttons__container button {
+  width: 30%;
+  height: 90%;
+  border: none;
+  background-color: var(--color2);
+  font-size: 1.7rem;
+  color: var(--color5);
+  font-family: var(--fontFam2);
+  cursor: pointer;
+}
+
+.buttons__container {
+  width: 100%;
+  height: 10%;
+  margin-bottom: 10%;
+  margin-top: 10%;
+  justify-content: space-around !important;
+}
+
+.fa-arrow-rotate-left { 
+  font-size: 2.5rem;
+  color: var(--color5);
+}
+
+.fa-arrow-rotate-left:hover {
+  cursor: pointer;
 }
