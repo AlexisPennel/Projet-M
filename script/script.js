@@ -1663,7 +1663,7 @@ const main = () => {
 
     //  Bouton valider 
     document.getElementById("validateButton").addEventListener("click", () => {
-        window.location.href = 'http://127.0.0.1:5500/frontend/html/MyWeek.html'
+        window.location.href = 'https://alexispennel.github.io/Projet-M/html/MyWeek.html#'
     });
 
 
