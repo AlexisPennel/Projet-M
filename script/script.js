@@ -1,23 +1,22 @@
-import { addSelectedButton, removeSelectedButton, removeSelectedRecipe, removeVisibilityHidden } from "./lib/tools_Lunch.js";
+import { addSelectedButton, removeSelectedButton, removeSelectedRecipe, removeVisibilityHidden } from "./lib/tools.js";
 import { removeSelectedRecipeB } from "./lib/tools_Breakfast.js";
+import { BreakfastSelected0, BreakfastSelected1, BreakfastSelected2, BreakfastSelected3, BreakfastSelected4, BreakfastSelected5, createPopUpBreakfast } from "./lib/popUpBreakfast.js";
+import { createPopUpLunch, LunchSelected0, LunchSelected1, LunchSelected2, LunchSelected3, LunchSelected4, LunchSelected5, LunchSelected6, LunchSelected7, LunchSelected8, LunchSelected9, LunchSelected10, LunchSelected11 } from "./lib/popUpLunch.js";
+import { createPopUpDinner, DinnerSelected0, DinnerSelected1, DinnerSelected2, DinnerSelected3, DinnerSelected4, DinnerSelected5, DinnerSelected6, DinnerSelected7, DinnerSelected8, DinnerSelected9, DinnerSelected10, DinnerSelected11 } from "./lib/popUpDinner.js";
 
 const main = () => {
     // Variables 
     const main = document.getElementById('main');
-
-    // Variables popUp MONDAY 
-    const cardContainerMonday = document.getElementById('cardContainerMonday')
-    const popUpMonday = document.getElementById('popUpMonday');
-    const popUpMondayB = document.getElementById('popUpMondayB');
-    let cardMondayB = "";
-    let cardMonday = "";
-
+    const popUp = document.getElementById('popUp');
+    console.log(popUp)
+   
     // Variable Tableau de recettes
     const recipesArray = [];
     const breakfastRecipesArray = [];
     // Variable element select
-    let elementSelected = -1;
     let elementSelectedB = -1;
+    let elementSelectedL = -1;
+    let elementSelectedD = -1;
 
 
     // Bouton "new plan"
@@ -27,120 +26,1740 @@ const main = () => {
         removeSelectedButton();
     });
 
-    // Apparition popUp "Breakfast" 
+
+
+    // POP UP BREAKFAST 
+    // --------------------Apparition popUp " Monday Breakfast"---------------------------------------------- 
     document.getElementById("mondayBreakfast").addEventListener("click", () => {
         setTimeout(() => {
-            main.classList.add('visibilityHidden');
-            popUpMondayB.classList.remove('visibilityHidden');
+            createPopUpBreakfast(popUp);
+
+            document.getElementById('return').addEventListener('click', () => {
+                document.getElementById('popUpCard').remove();
+            })
+
+            document.getElementById('B0').addEventListener("click", (e) => {
+                elementSelectedB = 0;
+                BreakfastSelected0();
+            });
+
+            document.getElementById('B1').addEventListener("click", (e) => {
+                elementSelectedB = 1;
+                BreakfastSelected1();
+            });
+
+            document.getElementById('B2').addEventListener("click", (e) => {
+                elementSelectedB = 2;
+                BreakfastSelected2();
+            });
+
+            document.getElementById('B3').addEventListener("click", (e) => {
+                elementSelectedB = 3;
+                BreakfastSelected3();
+            });
+
+            document.getElementById('B4').addEventListener("click", (e) => {
+                elementSelectedB = 4;
+                BreakfastSelected4();
+            });
+
+            document.getElementById('B5').addEventListener("click", (e) => {
+                elementSelectedB = 5;
+                BreakfastSelected5();
+            });
+
+            document.getElementById("popUpButtonValidate").addEventListener("click", () => {
+                if (elementSelectedB === -1) {
+                    return
+                }
+                console.log(elementSelectedB);
+                console.log(breakfastRecipesArray[0]);
+                localStorage.setItem('mondayBreakfast', JSON.stringify(breakfastRecipesArray[elementSelectedB]));
+                console.log(localStorage);
+                elementSelectedB = -1;
+                document.getElementById('popUpCard').remove();
+                document.getElementById("mondayBreakfast").classList.add("buttonSelected");;
+            });
+
         }, 400)
     });
 
+    // --------------------Apparition popUp " Tuesday Breakfast"---------------------------------------------- 
     document.getElementById("tuesdayBreakfast").addEventListener("click", () => {
         setTimeout(() => {
-            main.classList.add('visibilityHidden');
-            popUpTuesday.classList.remove('visibilityHidden');
+            console.log('yes');
+            createPopUpBreakfast(popUp);
+
+            document.getElementById('return').addEventListener('click', () => {
+                document.getElementById('popUpCard').remove();
+            })
+
+            document.getElementById('B0').addEventListener("click", (e) => {
+                elementSelectedB = 0;
+                BreakfastSelected0();
+            });
+
+            document.getElementById('B1').addEventListener("click", (e) => {
+                elementSelectedB = 1;
+                BreakfastSelected1();
+            });
+
+            document.getElementById('B2').addEventListener("click", (e) => {
+                elementSelectedB = 2;
+                BreakfastSelected2();
+            });
+
+            document.getElementById('B3').addEventListener("click", (e) => {
+                elementSelectedB = 3;
+                BreakfastSelected3();
+            });
+
+            document.getElementById('B4').addEventListener("click", (e) => {
+                elementSelectedB = 4;
+                BreakfastSelected4();
+            });
+
+            document.getElementById('B5').addEventListener("click", (e) => {
+                elementSelectedB = 5;
+                BreakfastSelected5();
+            });
+
+            document.getElementById("popUpButtonValidate").addEventListener("click", () => {
+                if (elementSelectedB === -1) {
+                    return
+                }
+                console.log(elementSelectedB);
+                console.log(breakfastRecipesArray[0]);
+                localStorage.setItem('tuesdayBreakfast', JSON.stringify(breakfastRecipesArray[elementSelectedB]));
+                console.log(localStorage);
+                elementSelectedB = -1;
+                document.getElementById('popUpCard').remove();
+                document.getElementById("tuesdayBreakfast").classList.add("buttonSelected");;
+            });
+
         }, 400)
     });
 
+    // --------------------Apparition popUp " Wednesday Breakfast"---------------------------------------------- 
     document.getElementById("wednesdayBreakfast").addEventListener("click", () => {
         setTimeout(() => {
-            main.classList.add('visibilityHidden');
-            popUpWednesday.classList.remove('visibilityHidden');
+            createPopUpBreakfast(popUp);
+
+            document.getElementById('return').addEventListener('click', () => {
+                document.getElementById('popUpCard').remove();
+            })
+
+            document.getElementById('B0').addEventListener("click", (e) => {
+                elementSelectedB = 0;
+                BreakfastSelected0();
+            });
+
+            document.getElementById('B1').addEventListener("click", (e) => {
+                elementSelectedB = 1;
+                BreakfastSelected1();
+            });
+
+            document.getElementById('B2').addEventListener("click", (e) => {
+                elementSelectedB = 2;
+                BreakfastSelected2();
+            });
+
+            document.getElementById('B3').addEventListener("click", (e) => {
+                elementSelectedB = 3;
+                BreakfastSelected3();
+            });
+
+            document.getElementById('B4').addEventListener("click", (e) => {
+                elementSelectedB = 4;
+                BreakfastSelected4();
+            });
+
+            document.getElementById('B5').addEventListener("click", (e) => {
+                elementSelectedB = 5;
+                BreakfastSelected5();
+            });
+
+            document.getElementById("popUpButtonValidate").addEventListener("click", () => {
+                if (elementSelectedB === -1) {
+                    return
+                }
+                console.log(elementSelectedB);
+                console.log(breakfastRecipesArray[0]);
+                localStorage.setItem('wednesdayBreakfast', JSON.stringify(breakfastRecipesArray[elementSelectedB]));
+                console.log(localStorage);
+                elementSelectedB = -1;
+                document.getElementById('popUpCard').remove();
+                document.getElementById("wednesdayBreakfast").classList.add("buttonSelected");;
+            });
+
         }, 400)
     });
 
+    // --------------------Apparition popUp " Thursday Breakfast"---------------------------------------------- 
     document.getElementById("thursdayBreakfast").addEventListener("click", () => {
         setTimeout(() => {
-            main.classList.add('visibilityHidden');
-            popUpThursday.classList.remove('visibilityHidden');
+            createPopUpBreakfast(popUp);
+
+            document.getElementById('return').addEventListener('click', () => {
+                document.getElementById('popUpCard').remove();
+            })
+
+            document.getElementById('B0').addEventListener("click", (e) => {
+                elementSelectedB = 0;
+                BreakfastSelected0();
+            });
+
+            document.getElementById('B1').addEventListener("click", (e) => {
+                elementSelectedB = 1;
+                BreakfastSelected1();
+            });
+
+            document.getElementById('B2').addEventListener("click", (e) => {
+                elementSelectedB = 2;
+                BreakfastSelected2();
+            });
+
+            document.getElementById('B3').addEventListener("click", (e) => {
+                elementSelectedB = 3;
+                BreakfastSelected3();
+            });
+
+            document.getElementById('B4').addEventListener("click", (e) => {
+                elementSelectedB = 4;
+                BreakfastSelected4();
+            });
+
+            document.getElementById('B5').addEventListener("click", (e) => {
+                elementSelectedB = 5;
+                BreakfastSelected5();
+            });
+
+            document.getElementById("popUpButtonValidate").addEventListener("click", () => {
+                if (elementSelectedB === -1) {
+                    return
+                }
+                console.log(elementSelectedB);
+                console.log(breakfastRecipesArray[0]);
+                localStorage.setItem('thursdayBreakfast', JSON.stringify(breakfastRecipesArray[elementSelectedB]));
+                console.log(localStorage);
+                elementSelectedB = -1;
+                document.getElementById('popUpCard').remove();
+                document.getElementById("thursdayBreakfast").classList.add("buttonSelected");;
+            });
+
         }, 400)
     });
 
+    // --------------------Apparition popUp " Friday Breakfast"---------------------------------------------- 
     document.getElementById("fridayBreakfast").addEventListener("click", () => {
         setTimeout(() => {
-            main.classList.add('visibilityHidden');
-            popUpFriday.classList.remove('visibilityHidden');
+            createPopUpBreakfast(popUp);
+
+            document.getElementById('return').addEventListener('click', () => {
+                document.getElementById('popUpCard').remove();
+            })
+
+            document.getElementById('B0').addEventListener("click", (e) => {
+                elementSelectedB = 0;
+                BreakfastSelected0();
+            });
+
+            document.getElementById('B1').addEventListener("click", (e) => {
+                elementSelectedB = 1;
+                BreakfastSelected1();
+            });
+
+            document.getElementById('B2').addEventListener("click", (e) => {
+                elementSelectedB = 2;
+                BreakfastSelected2();
+            });
+
+            document.getElementById('B3').addEventListener("click", (e) => {
+                elementSelectedB = 3;
+                BreakfastSelected3();
+            });
+
+            document.getElementById('B4').addEventListener("click", (e) => {
+                elementSelectedB = 4;
+                BreakfastSelected4();
+            });
+
+            document.getElementById('B5').addEventListener("click", (e) => {
+                elementSelectedB = 5;
+                BreakfastSelected5();
+            });
+
+            document.getElementById("popUpButtonValidate").addEventListener("click", () => {
+                if (elementSelectedB === -1) {
+                    return
+                }
+                console.log(elementSelectedB);
+                console.log(breakfastRecipesArray[0]);
+                localStorage.setItem('fridayBreakfast', JSON.stringify(breakfastRecipesArray[elementSelectedB]));
+                console.log(localStorage);
+                elementSelectedB = -1;
+                document.getElementById('popUpCard').remove();
+                document.getElementById("fridayBreakfast").classList.add("buttonSelected");;
+            });
+
         }, 400)
     });
 
+    // --------------------Apparition popUp " Saturday Breakfast"---------------------------------------------- 
     document.getElementById("saturdayBreakfast").addEventListener("click", () => {
         setTimeout(() => {
-            main.classList.add('visibilityHidden');
-            popUpSaturday.classList.remove('visibilityHidden');
+            createPopUpBreakfast(popUp);
+
+            document.getElementById('return').addEventListener('click', () => {
+                document.getElementById('popUpCard').remove();
+            })
+
+            document.getElementById('B0').addEventListener("click", (e) => {
+                elementSelectedB = 0;
+                BreakfastSelected0();
+            });
+
+            document.getElementById('B1').addEventListener("click", (e) => {
+                elementSelectedB = 1;
+                BreakfastSelected1();
+            });
+
+            document.getElementById('B2').addEventListener("click", (e) => {
+                elementSelectedB = 2;
+                BreakfastSelected2();
+            });
+
+            document.getElementById('B3').addEventListener("click", (e) => {
+                elementSelectedB = 3;
+                BreakfastSelected3();
+            });
+
+            document.getElementById('B4').addEventListener("click", (e) => {
+                elementSelectedB = 4;
+                BreakfastSelected4();
+            });
+
+            document.getElementById('B5').addEventListener("click", (e) => {
+                elementSelectedB = 5;
+                BreakfastSelected5();
+            });
+
+            document.getElementById("popUpButtonValidate").addEventListener("click", () => {
+                if (elementSelectedB === -1) {
+                    return
+                }
+                console.log(elementSelectedB);
+                console.log(breakfastRecipesArray[0]);
+                localStorage.setItem('saturdayBreakfast', JSON.stringify(breakfastRecipesArray[elementSelectedB]));
+                console.log(localStorage);
+                elementSelectedB = -1;
+                document.getElementById('popUpCard').remove();
+                document.getElementById("saturdayBreakfast").classList.add("buttonSelected");;
+            });
+
         }, 400)
     });
 
+    // --------------------Apparition popUp " Sunday Breakfast"---------------------------------------------- 
     document.getElementById("sundayBreakfast").addEventListener("click", () => {
         setTimeout(() => {
-            main.classList.add('visibilityHidden');
-            popUpSunday.classList.remove('visibilityHidden');
+            createPopUpBreakfast(popUp);
+
+            document.getElementById('return').addEventListener('click', () => {
+                document.getElementById('popUpCard').remove();
+            })
+
+            document.getElementById('B0').addEventListener("click", (e) => {
+                elementSelectedB = 0;
+                BreakfastSelected0();
+            });
+
+            document.getElementById('B1').addEventListener("click", (e) => {
+                elementSelectedB = 1;
+                BreakfastSelected1();
+            });
+
+            document.getElementById('B2').addEventListener("click", (e) => {
+                elementSelectedB= 2;
+                BreakfastSelected2();
+            });
+
+            document.getElementById('B3').addEventListener("click", (e) => {
+                elementSelectedB = 3;
+                BreakfastSelected3();
+            });
+
+            document.getElementById('B4').addEventListener("click", (e) => {
+                elementSelectedB = 4;
+                BreakfastSelected4();
+            });
+
+            document.getElementById('B5').addEventListener("click", (e) => {
+                elementSelectedB = 5;
+                BreakfastSelected5();
+            });
+
+            document.getElementById("popUpButtonValidate").addEventListener("click", () => {
+                if (elementSelectedB === -1) {
+                    return
+                }
+                console.log(elementSelectedB);
+                console.log(breakfastRecipesArray[0]);
+                localStorage.setItem('sundayBreakfast', JSON.stringify(breakfastRecipesArray[elementSelectedB]));
+                console.log(localStorage);
+                elementSelectedB = -1;
+                document.getElementById('popUpCard').remove();
+                document.getElementById("sundayBreakfast").classList.add("buttonSelected");;
+            });
+
         }, 400)
     });
 
-    // Apparition popUp "Lunch" par jour de la semaine  
+    // POP UP LUNCH 
+    // --------------------Apparition popUp " Monday Lunch"---------------------------------------------- 
     document.getElementById("mondayLunch").addEventListener("click", () => {
         setTimeout(() => {
-            main.classList.add('visibilityHidden');
-            popUpMonday.classList.remove('visibilityHidden');
+            createPopUpLunch(popUp);
+
+            document.getElementById('return').addEventListener('click', () => {
+                document.getElementById('popUpCard').remove();
+            })
+
+            document.getElementById('0').addEventListener("click", (e) => {
+                elementSelectedL = 0;
+                LunchSelected0();
+            });
+
+            document.getElementById('1').addEventListener("click", (e) => {
+                elementSelectedL = 1;
+                LunchSelected1();
+            });
+
+            document.getElementById('2').addEventListener("click", (e) => {
+                elementSelectedL = 2;
+                LunchSelected2();
+            });
+
+            document.getElementById('3').addEventListener("click", (e) => {
+                elementSelectedL = 3;
+                LunchSelected3();
+            });
+
+            document.getElementById('4').addEventListener("click", (e) => {
+                elementSelectedL = 4;
+                LunchSelected4();
+            });
+
+            document.getElementById('5').addEventListener("click", (e) => {
+                elementSelectedL = 5;
+                LunchSelected5();
+            });
+
+            document.getElementById('6').addEventListener("click", (e) => {
+                elementSelectedL = 6;
+                LunchSelected6();
+            });
+
+            document.getElementById('7').addEventListener("click", (e) => {
+                elementSelectedL = 7;
+                LunchSelected7();
+            });
+
+            document.getElementById('8').addEventListener("click", (e) => {
+                elementSelectedL = 8;
+                LunchSelected8();
+            });
+
+            document.getElementById('9').addEventListener("click", (e) => {
+                elementSelectedL = 9;
+                LunchSelected9();
+            });
+
+            document.getElementById('10').addEventListener("click", (e) => {
+                elementSelectedL = 10;
+                LunchSelected10();
+            });
+
+            document.getElementById('11').addEventListener("click", (e) => {
+                elementSelectedL = 11;
+                LunchSelected11();
+            });
+
+            document.getElementById("popUpButtonValidate").addEventListener("click", () => {
+                if (elementSelectedL === -1) {
+                    return
+                }
+                console.log(elementSelectedL);
+                console.log(recipesArray[0]);
+                localStorage.setItem('mondayLunch', JSON.stringify(recipesArray[elementSelectedL]));
+                console.log(localStorage);
+                elementSelectedL = -1;
+                document.getElementById('popUpCard').remove();
+                document.getElementById("mondayLunch").classList.add("buttonSelected");;
+            });
+
         }, 400)
     });
 
-    document.getElementById("tuesdayLunch").addEventListener("click", () => {
+     // --------------------Apparition popUp " Tuesday Lunch"---------------------------------------------- 
+     document.getElementById("tuesdayLunch").addEventListener("click", () => {
         setTimeout(() => {
-            main.classList.add('visibilityHidden');
-            popUpTuesday.classList.remove('visibilityHidden');
+            createPopUpLunch(popUp);
+
+            document.getElementById('return').addEventListener('click', () => {
+                document.getElementById('popUpCard').remove();
+            })
+
+            document.getElementById('0').addEventListener("click", (e) => {
+                elementSelectedL = 0;
+                LunchSelected0();
+            });
+
+            document.getElementById('1').addEventListener("click", (e) => {
+                elementSelectedL = 1;
+                LunchSelected1();
+            });
+
+            document.getElementById('2').addEventListener("click", (e) => {
+                elementSelectedL = 2;
+                LunchSelected2();
+            });
+
+            document.getElementById('3').addEventListener("click", (e) => {
+                elementSelectedL = 3;
+                LunchSelected3();
+            });
+
+            document.getElementById('4').addEventListener("click", (e) => {
+                elementSelectedL = 4;
+                LunchSelected4();
+            });
+
+            document.getElementById('5').addEventListener("click", (e) => {
+                elementSelectedL = 5;
+                LunchSelected5();
+            });
+
+            document.getElementById('6').addEventListener("click", (e) => {
+                elementSelectedL = 6;
+                LunchSelected6();
+            });
+
+            document.getElementById('7').addEventListener("click", (e) => {
+                elementSelectedL = 7;
+                LunchSelected7();
+            });
+
+            document.getElementById('8').addEventListener("click", (e) => {
+                elementSelectedL = 8;
+                LunchSelected8();
+            });
+
+            document.getElementById('9').addEventListener("click", (e) => {
+                elementSelectedL = 9;
+                LunchSelected9();
+            });
+
+            document.getElementById('10').addEventListener("click", (e) => {
+                elementSelectedL = 10;
+                LunchSelected10();
+            });
+
+            document.getElementById('11').addEventListener("click", (e) => {
+                elementSelectedL = 11;
+                LunchSelected11();
+            });
+
+            document.getElementById("popUpButtonValidate").addEventListener("click", () => {
+                if (elementSelectedL === -1) {
+                    return
+                }
+                console.log(elementSelectedL);
+                console.log(recipesArray[0]);
+                localStorage.setItem('tuesdayLunch', JSON.stringify(recipesArray[elementSelectedL]));
+                console.log(localStorage);
+                elementSelectedL = -1;
+                document.getElementById('popUpCard').remove();
+                document.getElementById("tuesdayLunch").classList.add("buttonSelected");;
+            });
+
         }, 400)
     });
 
-    document.getElementById("wednesdayLunch").addEventListener("click", () => {
+     // --------------------Apparition popUp " wednesday Lunch"---------------------------------------------- 
+     document.getElementById("wednesdayLunch").addEventListener("click", () => {
         setTimeout(() => {
-            main.classList.add('visibilityHidden');
-            popUpWednesday.classList.remove('visibilityHidden');
+            createPopUpLunch(popUp);
+
+            document.getElementById('return').addEventListener('click', () => {
+                document.getElementById('popUpCard').remove();
+            })
+
+            document.getElementById('0').addEventListener("click", (e) => {
+                elementSelectedL = 0;
+                LunchSelected0();
+            });
+
+            document.getElementById('1').addEventListener("click", (e) => {
+                elementSelectedL = 1;
+                LunchSelected1();
+            });
+
+            document.getElementById('2').addEventListener("click", (e) => {
+                elementSelectedL = 2;
+                LunchSelected2();
+            });
+
+            document.getElementById('3').addEventListener("click", (e) => {
+                elementSelectedL = 3;
+                LunchSelected3();
+            });
+
+            document.getElementById('4').addEventListener("click", (e) => {
+                elementSelectedL = 4;
+                LunchSelected4();
+            });
+
+            document.getElementById('5').addEventListener("click", (e) => {
+                elementSelectedL = 5;
+                LunchSelected5();
+            });
+
+            document.getElementById('6').addEventListener("click", (e) => {
+                elementSelectedL = 6;
+                LunchSelected6();
+            });
+
+            document.getElementById('7').addEventListener("click", (e) => {
+                elementSelectedL = 7;
+                LunchSelected7();
+            });
+
+            document.getElementById('8').addEventListener("click", (e) => {
+                elementSelectedL = 8;
+                LunchSelected8();
+            });
+
+            document.getElementById('9').addEventListener("click", (e) => {
+                elementSelectedL = 9;
+                LunchSelected9();
+            });
+
+            document.getElementById('10').addEventListener("click", (e) => {
+                elementSelectedL = 10;
+                LunchSelected10();
+            });
+
+            document.getElementById('11').addEventListener("click", (e) => {
+                elementSelectedL = 11;
+                LunchSelected11();
+            });
+
+            document.getElementById("popUpButtonValidate").addEventListener("click", () => {
+                if (elementSelectedL === -1) {
+                    return
+                }
+                console.log(elementSelectedL);
+                console.log(recipesArray[0]);
+                localStorage.setItem('wednesdayLunch', JSON.stringify(recipesArray[elementSelectedL]));
+                console.log(localStorage);
+                elementSelectedL = -1;
+                document.getElementById('popUpCard').remove();
+                document.getElementById("wednesdayLunch").classList.add("buttonSelected");;
+            });
+
         }, 400)
     });
 
-    document.getElementById("thursdayLunch").addEventListener("click", () => {
+     // --------------------Apparition popUp " Thursday Lunch"---------------------------------------------- 
+     document.getElementById("thursdayLunch").addEventListener("click", () => {
         setTimeout(() => {
-            main.classList.add('visibilityHidden');
-            popUpThursday.classList.remove('visibilityHidden');
+            createPopUpLunch(popUp);
+
+            document.getElementById('return').addEventListener('click', () => {
+                document.getElementById('popUpCard').remove();
+            })
+
+            document.getElementById('0').addEventListener("click", (e) => {
+                elementSelectedL = 0;
+                LunchSelected0();
+            });
+
+            document.getElementById('1').addEventListener("click", (e) => {
+                elementSelectedL = 1;
+                LunchSelected1();
+            });
+
+            document.getElementById('2').addEventListener("click", (e) => {
+                elementSelectedL = 2;
+                LunchSelected2();
+            });
+
+            document.getElementById('3').addEventListener("click", (e) => {
+                elementSelectedL = 3;
+                LunchSelected3();
+            });
+
+            document.getElementById('4').addEventListener("click", (e) => {
+                elementSelectedL = 4;
+                LunchSelected4();
+            });
+
+            document.getElementById('5').addEventListener("click", (e) => {
+                elementSelectedL = 5;
+                LunchSelected5();
+            });
+
+            document.getElementById('6').addEventListener("click", (e) => {
+                elementSelectedL = 6;
+                LunchSelected6();
+            });
+
+            document.getElementById('7').addEventListener("click", (e) => {
+                elementSelectedL = 7;
+                LunchSelected7();
+            });
+
+            document.getElementById('8').addEventListener("click", (e) => {
+                elementSelectedL = 8;
+                LunchSelected8();
+            });
+
+            document.getElementById('9').addEventListener("click", (e) => {
+                elementSelectedL = 9;
+                LunchSelected9();
+            });
+
+            document.getElementById('10').addEventListener("click", (e) => {
+                elementSelectedL = 10;
+                LunchSelected10();
+            });
+
+            document.getElementById('11').addEventListener("click", (e) => {
+                elementSelectedL = 11;
+                LunchSelected11();
+            });
+
+            document.getElementById("popUpButtonValidate").addEventListener("click", () => {
+                if (elementSelectedL === -1) {
+                    return
+                }
+                console.log(elementSelectedL);
+                console.log(recipesArray[0]);
+                localStorage.setItem('thursdayLunch', JSON.stringify(recipesArray[elementSelectedL]));
+                console.log(localStorage);
+                elementSelectedL = -1;
+                document.getElementById('popUpCard').remove();
+                document.getElementById("thursdayLunch").classList.add("buttonSelected");;
+            });
+
         }, 400)
     });
 
-    document.getElementById("fridayLunch").addEventListener("click", () => {
+     // --------------------Apparition popUp " FridayLunch"---------------------------------------------- 
+     document.getElementById("fridayLunch").addEventListener("click", () => {
         setTimeout(() => {
-            main.classList.add('visibilityHidden');
-            popUpFriday.classList.remove('visibilityHidden');
+            createPopUpLunch(popUp);
+
+            document.getElementById('return').addEventListener('click', () => {
+                document.getElementById('popUpCard').remove();
+            })
+
+            document.getElementById('0').addEventListener("click", (e) => {
+                elementSelectedL = 0;
+                LunchSelected0();
+            });
+
+            document.getElementById('1').addEventListener("click", (e) => {
+                elementSelectedL = 1;
+                LunchSelected1();
+            });
+
+            document.getElementById('2').addEventListener("click", (e) => {
+                elementSelectedL = 2;
+                LunchSelected2();
+            });
+
+            document.getElementById('3').addEventListener("click", (e) => {
+                elementSelectedL = 3;
+                LunchSelected3();
+            });
+
+            document.getElementById('4').addEventListener("click", (e) => {
+                elementSelectedL = 4;
+                LunchSelected4();
+            });
+
+            document.getElementById('5').addEventListener("click", (e) => {
+                elementSelectedL = 5;
+                LunchSelected5();
+            });
+
+            document.getElementById('6').addEventListener("click", (e) => {
+                elementSelectedL = 6;
+                LunchSelected6();
+            });
+
+            document.getElementById('7').addEventListener("click", (e) => {
+                elementSelectedL = 7;
+                LunchSelected7();
+            });
+
+            document.getElementById('8').addEventListener("click", (e) => {
+                elementSelectedL = 8;
+                LunchSelected8();
+            });
+
+            document.getElementById('9').addEventListener("click", (e) => {
+                elementSelectedL = 9;
+                LunchSelected9();
+            });
+
+            document.getElementById('10').addEventListener("click", (e) => {
+                elementSelectedL = 10;
+                LunchSelected10();
+            });
+
+            document.getElementById('11').addEventListener("click", (e) => {
+                elementSelectedL = 11;
+                LunchSelected11();
+            });
+
+            document.getElementById("popUpButtonValidate").addEventListener("click", () => {
+                if (elementSelectedL === -1) {
+                    return
+                }
+                console.log(elementSelectedL);
+                console.log(recipesArray[0]);
+                localStorage.setItem('fridayLunch', JSON.stringify(recipesArray[elementSelectedL]));
+                console.log(localStorage);
+                elementSelectedL = -1;
+                document.getElementById('popUpCard').remove();
+                document.getElementById("fridayLunch").classList.add("buttonSelected");;
+            });
+
         }, 400)
     });
 
-    document.getElementById("saturdayLunch").addEventListener("click", () => {
+     // --------------------Apparition popUp " Saturday Lunch"---------------------------------------------- 
+     document.getElementById("saturdayLunch").addEventListener("click", () => {
         setTimeout(() => {
-            main.classList.add('visibilityHidden');
-            popUpSaturday.classList.remove('visibilityHidden');
+            createPopUpLunch(popUp);
+
+            document.getElementById('return').addEventListener('click', () => {
+                document.getElementById('popUpCard').remove();
+            })
+
+            document.getElementById('0').addEventListener("click", (e) => {
+                elementSelectedL = 0;
+                LunchSelected0();
+            });
+
+            document.getElementById('1').addEventListener("click", (e) => {
+                elementSelectedL = 1;
+                LunchSelected1();
+            });
+
+            document.getElementById('2').addEventListener("click", (e) => {
+                elementSelectedL = 2;
+                LunchSelected2();
+            });
+
+            document.getElementById('3').addEventListener("click", (e) => {
+                elementSelectedL = 3;
+                LunchSelected3();
+            });
+
+            document.getElementById('4').addEventListener("click", (e) => {
+                elementSelectedL = 4;
+                LunchSelected4();
+            });
+
+            document.getElementById('5').addEventListener("click", (e) => {
+                elementSelectedL = 5;
+                LunchSelected5();
+            });
+
+            document.getElementById('6').addEventListener("click", (e) => {
+                elementSelectedL = 6;
+                LunchSelected6();
+            });
+
+            document.getElementById('7').addEventListener("click", (e) => {
+                elementSelectedL = 7;
+                LunchSelected7();
+            });
+
+            document.getElementById('8').addEventListener("click", (e) => {
+                elementSelectedL = 8;
+                LunchSelected8();
+            });
+
+            document.getElementById('9').addEventListener("click", (e) => {
+                elementSelectedL = 9;
+                LunchSelected9();
+            });
+
+            document.getElementById('10').addEventListener("click", (e) => {
+                elementSelectedL = 10;
+                LunchSelected10();
+            });
+
+            document.getElementById('11').addEventListener("click", (e) => {
+                elementSelectedL = 11;
+                LunchSelected11();
+            });
+
+            document.getElementById("popUpButtonValidate").addEventListener("click", () => {
+                if (elementSelectedL === -1) {
+                    return
+                }
+                console.log(elementSelectedL);
+                console.log(recipesArray[0]);
+                localStorage.setItem('saturdayLunch', JSON.stringify(recipesArray[elementSelectedL]));
+                console.log(localStorage);
+                elementSelectedL = -1;
+                document.getElementById('popUpCard').remove();
+                document.getElementById("saturdayLunch").classList.add("buttonSelected");;
+            });
+
         }, 400)
     });
 
-    document.getElementById("sundayLunch").addEventListener("click", () => {
+     // --------------------Apparition popUp " Sunday Lunch"---------------------------------------------- 
+     document.getElementById("sundayLunch").addEventListener("click", () => {
         setTimeout(() => {
-            main.classList.add('visibilityHidden');
-            popUpSunday.classList.remove('visibilityHidden');
+            createPopUpLunch(popUp);
+
+            document.getElementById('return').addEventListener('click', () => {
+                document.getElementById('popUpCard').remove();
+            })
+
+            document.getElementById('0').addEventListener("click", (e) => {
+                elementSelectedL = 0;
+                LunchSelected0();
+            });
+
+            document.getElementById('1').addEventListener("click", (e) => {
+                elementSelectedL = 1;
+                LunchSelected1();
+            });
+
+            document.getElementById('2').addEventListener("click", (e) => {
+                elementSelectedL = 2;
+                LunchSelected2();
+            });
+
+            document.getElementById('3').addEventListener("click", (e) => {
+                elementSelectedL = 3;
+                LunchSelected3();
+            });
+
+            document.getElementById('4').addEventListener("click", (e) => {
+                elementSelectedL = 4;
+                LunchSelected4();
+            });
+
+            document.getElementById('5').addEventListener("click", (e) => {
+                elementSelectedL = 5;
+                LunchSelected5();
+            });
+
+            document.getElementById('6').addEventListener("click", (e) => {
+                elementSelectedL = 6;
+                LunchSelected6();
+            });
+
+            document.getElementById('7').addEventListener("click", (e) => {
+                elementSelectedL = 7;
+                LunchSelected7();
+            });
+
+            document.getElementById('8').addEventListener("click", (e) => {
+                elementSelectedL = 8;
+                LunchSelected8();
+            });
+
+            document.getElementById('9').addEventListener("click", (e) => {
+                elementSelectedL = 9;
+                LunchSelected9();
+            });
+
+            document.getElementById('10').addEventListener("click", (e) => {
+                elementSelectedL = 10;
+                LunchSelected10();
+            });
+
+            document.getElementById('11').addEventListener("click", (e) => {
+                elementSelectedL = 11;
+                LunchSelected11();
+            });
+
+            document.getElementById("popUpButtonValidate").addEventListener("click", () => {
+                if (elementSelectedL === -1) {
+                    return
+                }
+                console.log(elementSelectedL);
+                console.log(recipesArray[0]);
+                localStorage.setItem('sundayLunch', JSON.stringify(recipesArray[elementSelectedL]));
+                console.log(localStorage);
+                elementSelectedL = -1;
+                document.getElementById('popUpCard').remove();
+                document.getElementById("sundayLunch").classList.add("buttonSelected");;
+            });
+
         }, 400)
     });
 
-    //*************************Bouton return 
-    document.addEventListener("click", (e) => {
-        if (e.target.className === "fa-solid fa-arrow-left") {
-            popUpMondayB.classList.add('visibilityHidden');
-            popUpMonday.classList.add("visibilityHidden");
-            popUpTuesday.classList.add("visibilityHidden");
-            popUpWednesday.classList.add("visibilityHidden");
-            popUpThursday.classList.add("visibilityHidden");
-            // popUpFriday.classList.add("visibilityHidden");
-            // popUpSaturdayclassList.add("visibilityHidden");
-            // popUpSunday.classList.add("visibilityHidden");            
-            main.classList.remove('visibilityHidden');
-        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ // POP UP DINNER 
+    // --------------------Apparition popUp " Monday Dinner"---------------------------------------------- 
+    document.getElementById("mondayDinner").addEventListener("click", () => {
+        setTimeout(() => {
+            createPopUpDinner(popUp);
+
+            document.getElementById('return').addEventListener('click', () => {
+                document.getElementById('popUpCard').remove();
+            })
+
+            document.getElementById('0').addEventListener("click", (e) => {
+                elementSelectedD = 0;
+                DinnerSelected0();
+            });
+
+            document.getElementById('1').addEventListener("click", (e) => {
+                elementSelectedD = 1;
+                DinnerSelected1();
+            });
+
+            document.getElementById('2').addEventListener("click", (e) => {
+                elementSelectedD = 2;
+                DinnerSelected2();
+            });
+
+            document.getElementById('3').addEventListener("click", (e) => {
+                elementSelectedD = 3;
+                DinnerSelected3();
+            });
+
+            document.getElementById('4').addEventListener("click", (e) => {
+                elementSelectedD = 4;
+                DinnerSelected4();
+            });
+
+            document.getElementById('5').addEventListener("click", (e) => {
+                elementSelectedD = 5;
+                DinnerSelected5();
+            });
+
+            document.getElementById('6').addEventListener("click", (e) => {
+                elementSelectedD = 6;
+                DinnerSelected6();
+            });
+
+            document.getElementById('7').addEventListener("click", (e) => {
+                elementSelectedD = 7;
+                DinnerSelected7();
+            });
+
+            document.getElementById('8').addEventListener("click", (e) => {
+                elementSelectedD = 8;
+                DinnerSelected8();
+            });
+
+            document.getElementById('9').addEventListener("click", (e) => {
+                elementSelectedD = 9;
+                DinnerSelected9();
+            });
+
+            document.getElementById('10').addEventListener("click", (e) => {
+                elementSelectedD = 10;
+                DinnerSelected10();
+            });
+
+            document.getElementById('11').addEventListener("click", (e) => {
+                elementSelectedD = 11;
+                DinnerSelected11();
+            });
+
+            document.getElementById("popUpButtonValidate").addEventListener("click", () => {
+                if (elementSelectedD === -1) {
+                    return
+                }
+                console.log(elementSelectedD);
+                console.log(recipesArray[0]);
+                localStorage.setItem('mondayDinner', JSON.stringify(recipesArray[elementSelectedD]));
+                console.log(localStorage);
+                elementSelectedD = -1;
+                document.getElementById('popUpCard').remove();
+                document.getElementById("mondayDinner").classList.add("buttonSelected");;
+            });
+
+        }, 400)
     });
+
+     // --------------------Apparition popUp " Tuesday Dinner"---------------------------------------------- 
+     document.getElementById("tuesdayDinner").addEventListener("click", () => {
+        setTimeout(() => {
+            createPopUpDinner(popUp);
+
+            document.getElementById('return').addEventListener('click', () => {
+                document.getElementById('popUpCard').remove();
+            })
+
+            document.getElementById('0').addEventListener("click", (e) => {
+                elementSelectedD = 0;
+                DinnerSelected0();
+            });
+
+            document.getElementById('1').addEventListener("click", (e) => {
+                elementSelectedD = 1;
+                DinnerSelected1();
+            });
+
+            document.getElementById('2').addEventListener("click", (e) => {
+                elementSelectedD = 2;
+                DinnerSelected2();
+            });
+
+            document.getElementById('3').addEventListener("click", (e) => {
+                elementSelectedD = 3;
+                DinnerSelected3();
+            });
+
+            document.getElementById('4').addEventListener("click", (e) => {
+                elementSelectedD = 4;
+                DinnerSelected4();
+            });
+
+            document.getElementById('5').addEventListener("click", (e) => {
+                elementSelectedD = 5;
+                DinnerSelected5();
+            });
+
+            document.getElementById('6').addEventListener("click", (e) => {
+                elementSelectedD = 6;
+                DinnerSelected6();
+            });
+
+            document.getElementById('7').addEventListener("click", (e) => {
+                elementSelectedD = 7;
+                DinnerSelected7();
+            });
+
+            document.getElementById('8').addEventListener("click", (e) => {
+                elementSelectedD = 8;
+                DinnerSelected8();
+            });
+
+            document.getElementById('9').addEventListener("click", (e) => {
+                elementSelectedD = 9;
+                DinnerSelected9();
+            });
+
+            document.getElementById('10').addEventListener("click", (e) => {
+                elementSelectedD = 10;
+                DinnerSelected10();
+            });
+
+            document.getElementById('11').addEventListener("click", (e) => {
+                elementSelectedD = 11;
+                DinnerSelected11();
+            });
+
+            document.getElementById("popUpButtonValidate").addEventListener("click", () => {
+                if (elementSelectedD === -1) {
+                    return
+                }
+                console.log(elementSelectedD);
+                console.log(recipesArray[0]);
+                localStorage.setItem('tuesdayDinner', JSON.stringify(recipesArray[elementSelectedD]));
+                console.log(localStorage);
+                elementSelectedD = -1;
+                document.getElementById('popUpCard').remove();
+                document.getElementById("tuesdayDinner").classList.add("buttonSelected");;
+            });
+
+        }, 400)
+    });
+
+     // --------------------Apparition popUp " wednesday Dinner"---------------------------------------------- 
+     document.getElementById("wednesdayDinner").addEventListener("click", () => {
+        setTimeout(() => {
+            createPopUpDinner(popUp);
+
+            document.getElementById('return').addEventListener('click', () => {
+                document.getElementById('popUpCard').remove();
+            })
+
+            document.getElementById('0').addEventListener("click", (e) => {
+                elementSelectedD = 0;
+                DinnerSelected0();
+            });
+
+            document.getElementById('1').addEventListener("click", (e) => {
+                elementSelectedD = 1;
+                DinnerSelected1();
+            });
+
+            document.getElementById('2').addEventListener("click", (e) => {
+                elementSelectedD = 2;
+                DinnerSelected2();
+            });
+
+            document.getElementById('3').addEventListener("click", (e) => {
+                elementSelectedD = 3;
+                DinnerSelected3();
+            });
+
+            document.getElementById('4').addEventListener("click", (e) => {
+                elementSelectedD = 4;
+                DinnerSelected4();
+            });
+
+            document.getElementById('5').addEventListener("click", (e) => {
+                elementSelectedD = 5;
+                DinnerSelected5();
+            });
+
+            document.getElementById('6').addEventListener("click", (e) => {
+                elementSelectedD = 6;
+                DinnerSelected6();
+            });
+
+            document.getElementById('7').addEventListener("click", (e) => {
+                elementSelectedD = 7;
+                DinnerSelected7();
+            });
+
+            document.getElementById('8').addEventListener("click", (e) => {
+                elementSelectedD = 8;
+                DinnerSelected8();
+            });
+
+            document.getElementById('9').addEventListener("click", (e) => {
+                elementSelectedD = 9;
+                DinnerSelected9();
+            });
+
+            document.getElementById('10').addEventListener("click", (e) => {
+                elementSelectedD = 10;
+                DinnerSelected10();
+            });
+
+            document.getElementById('11').addEventListener("click", (e) => {
+                elementSelectedD = 11;
+                DinnerSelected11();
+            });
+
+            document.getElementById("popUpButtonValidate").addEventListener("click", () => {
+                if (elementSelectedD === -1) {
+                    return
+                }
+                console.log(elementSelectedD);
+                console.log(recipesArray[0]);
+                localStorage.setItem('wednesdayDinner', JSON.stringify(recipesArray[elementSelectedD]));
+                console.log(localStorage);
+                elementSelectedD = -1;
+                document.getElementById('popUpCard').remove();
+                document.getElementById("wednesdayDinner").classList.add("buttonSelected");;
+            });
+
+        }, 400)
+    });
+
+     // --------------------Apparition popUp " Thursday Dinner"---------------------------------------------- 
+     document.getElementById("thursdayDinner").addEventListener("click", () => {
+        setTimeout(() => {
+            createPopUpDinner(popUp);
+
+            document.getElementById('return').addEventListener('click', () => {
+                document.getElementById('popUpCard').remove();
+            })
+
+            document.getElementById('0').addEventListener("click", (e) => {
+                elementSelectedD = 0;
+                DinnerSelected0();
+            });
+
+            document.getElementById('1').addEventListener("click", (e) => {
+                elementSelectedD = 1;
+                DinnerSelected1();
+            });
+
+            document.getElementById('2').addEventListener("click", (e) => {
+                elementSelectedD = 2;
+                DinnerSelected2();
+            });
+
+            document.getElementById('3').addEventListener("click", (e) => {
+                elementSelectedD = 3;
+                DinnerSelected3();
+            });
+
+            document.getElementById('4').addEventListener("click", (e) => {
+                elementSelectedD = 4;
+                DinnerSelected4();
+            });
+
+            document.getElementById('5').addEventListener("click", (e) => {
+                elementSelectedD = 5;
+                DinnerSelected5();
+            });
+
+            document.getElementById('6').addEventListener("click", (e) => {
+                elementSelectedD = 6;
+                DinnerSelected6();
+            });
+
+            document.getElementById('7').addEventListener("click", (e) => {
+                elementSelectedD = 7;
+                DinnerSelected7();
+            });
+
+            document.getElementById('8').addEventListener("click", (e) => {
+                elementSelectedD = 8;
+                DinnerSelected8();
+            });
+
+            document.getElementById('9').addEventListener("click", (e) => {
+                elementSelectedD = 9;
+                DinnerSelected9();
+            });
+
+            document.getElementById('10').addEventListener("click", (e) => {
+                elementSelectedD = 10;
+                DinnerSelected10();
+            });
+
+            document.getElementById('11').addEventListener("click", (e) => {
+                elementSelectedD = 11;
+                DinnerSelected11();
+            });
+
+            document.getElementById("popUpButtonValidate").addEventListener("click", () => {
+                if (elementSelectedD === -1) {
+                    return
+                }
+                console.log(elementSelectedD);
+                console.log(recipesArray[0]);
+                localStorage.setItem('thursdayDinner', JSON.stringify(recipesArray[elementSelectedD]));
+                console.log(localStorage);
+                elementSelectedD = -1;
+                document.getElementById('popUpCard').remove();
+                document.getElementById("thursdayDinner").classList.add("buttonSelected");;
+            });
+
+        }, 400)
+    });
+
+     // --------------------Apparition popUp " Friday Dinner"---------------------------------------------- 
+     document.getElementById("fridayDinner").addEventListener("click", () => {
+        setTimeout(() => {
+            createPopUpDinner(popUp);
+
+            document.getElementById('return').addEventListener('click', () => {
+                document.getElementById('popUpCard').remove();
+            })
+
+            document.getElementById('0').addEventListener("click", (e) => {
+                elementSelectedD = 0;
+                DinnerSelected0();
+            });
+
+            document.getElementById('1').addEventListener("click", (e) => {
+                elementSelectedD = 1;
+                DinnerSelected1();
+            });
+
+            document.getElementById('2').addEventListener("click", (e) => {
+                elementSelectedD = 2;
+                DinnerSelected2();
+            });
+
+            document.getElementById('3').addEventListener("click", (e) => {
+                elementSelectedD = 3;
+                DinnerSelected3();
+            });
+
+            document.getElementById('4').addEventListener("click", (e) => {
+                elementSelectedD = 4;
+                DinnerSelected4();
+            });
+
+            document.getElementById('5').addEventListener("click", (e) => {
+                elementSelectedD = 5;
+                DinnerSelected5();
+            });
+
+            document.getElementById('6').addEventListener("click", (e) => {
+                elementSelectedD = 6;
+                DinnerSelected6();
+            });
+
+            document.getElementById('7').addEventListener("click", (e) => {
+                elementSelectedD = 7;
+                DinnerSelected7();
+            });
+
+            document.getElementById('8').addEventListener("click", (e) => {
+                elementSelectedD = 8;
+                DinnerSelected8();
+            });
+
+            document.getElementById('9').addEventListener("click", (e) => {
+                elementSelectedD = 9;
+                DinnerSelected9();
+            });
+
+            document.getElementById('10').addEventListener("click", (e) => {
+                elementSelectedD = 10;
+                DinnerSelected10();
+            });
+
+            document.getElementById('11').addEventListener("click", (e) => {
+                elementSelectedD = 11;
+                DinnerSelected11();
+            });
+
+            document.getElementById("popUpButtonValidate").addEventListener("click", () => {
+                if (elementSelectedD === -1) {
+                    return
+                }
+                console.log(elementSelectedD);
+                console.log(recipesArray[0]);
+                localStorage.setItem('fridayDinner', JSON.stringify(recipesArray[elementSelectedD]));
+                console.log(localStorage);
+                elementSelectedD = -1;
+                document.getElementById('popUpCard').remove();
+                document.getElementById("fridayDinner").classList.add("buttonSelected");;
+            });
+
+        }, 400)
+    });
+
+     // --------------------Apparition popUp " Saturday Dinner"---------------------------------------------- 
+     document.getElementById("saturdayDinner").addEventListener("click", () => {
+        setTimeout(() => {
+            createPopUpDinner(popUp);
+
+            document.getElementById('return').addEventListener('click', () => {
+                document.getElementById('popUpCard').remove();
+            })
+
+            document.getElementById('0').addEventListener("click", (e) => {
+                elementSelectedD = 0;
+                DinnerSelected0();
+            });
+
+            document.getElementById('1').addEventListener("click", (e) => {
+                elementSelectedD = 1;
+                DinnerSelected1();
+            });
+
+            document.getElementById('2').addEventListener("click", (e) => {
+                elementSelectedD = 2;
+                DinnerSelected2();
+            });
+
+            document.getElementById('3').addEventListener("click", (e) => {
+                elementSelectedD = 3;
+                DinnerSelected3();
+            });
+
+            document.getElementById('4').addEventListener("click", (e) => {
+                elementSelectedD = 4;
+                DinnerSelected4();
+            });
+
+            document.getElementById('5').addEventListener("click", (e) => {
+                elementSelectedD = 5;
+                DinnerSelected5();
+            });
+
+            document.getElementById('6').addEventListener("click", (e) => {
+                elementSelectedD = 6;
+                DinnerSelected6();
+            });
+
+            document.getElementById('7').addEventListener("click", (e) => {
+                elementSelectedD = 7;
+                DinnerSelected7();
+            });
+
+            document.getElementById('8').addEventListener("click", (e) => {
+                elementSelectedD = 8;
+                DinnerSelected8();
+            });
+
+            document.getElementById('9').addEventListener("click", (e) => {
+                elementSelectedD = 9;
+                DinnerSelected9();
+            });
+
+            document.getElementById('10').addEventListener("click", (e) => {
+                elementSelectedD = 10;
+                DinnerSelected10();
+            });
+
+            document.getElementById('11').addEventListener("click", (e) => {
+                elementSelectedD = 11;
+                DinnerSelected11();
+            });
+
+            document.getElementById("popUpButtonValidate").addEventListener("click", () => {
+                if (elementSelectedD === -1) {
+                    return
+                }
+                console.log(elementSelectedD);
+                console.log(recipesArray[0]);
+                localStorage.setItem('saturdayDinner', JSON.stringify(recipesArray[elementSelectedD]));
+                console.log(localStorage);
+                elementSelectedD = -1;
+                document.getElementById('popUpCard').remove();
+                document.getElementById("saturdayDinner").classList.add("buttonSelected");;
+            });
+
+        }, 400)
+    });
+
+     // --------------------Apparition popUp " Sunday Dinner"---------------------------------------------- 
+     document.getElementById("sundayDinner").addEventListener("click", () => {
+        setTimeout(() => {
+            createPopUpDinner(popUp);
+
+            document.getElementById('return').addEventListener('click', () => {
+                document.getElementById('popUpCard').remove();
+            })
+
+            document.getElementById('0').addEventListener("click", (e) => {
+                elementSelectedD = 0;
+                DinnerSelected0();
+            });
+
+            document.getElementById('1').addEventListener("click", (e) => {
+                elementSelectedD = 1;
+                DinnerSelected1();
+            });
+
+            document.getElementById('2').addEventListener("click", (e) => {
+                elementSelectedD = 2;
+                DinnerSelected2();
+            });
+
+            document.getElementById('3').addEventListener("click", (e) => {
+                elementSelectedD = 3;
+                DinnerSelected3();
+            });
+
+            document.getElementById('4').addEventListener("click", (e) => {
+                elementSelectedD = 4;
+                DinnerSelected4();
+            });
+
+            document.getElementById('5').addEventListener("click", (e) => {
+                elementSelectedD = 5;
+                DinnerSelected5();
+            });
+
+            document.getElementById('6').addEventListener("click", (e) => {
+                elementSelectedD = 6;
+                DinnerSelected6();
+            });
+
+            document.getElementById('7').addEventListener("click", (e) => {
+                elementSelectedD = 7;
+                DinnerSelected7();
+            });
+
+            document.getElementById('8').addEventListener("click", (e) => {
+                elementSelectedD = 8;
+                DinnerSelected8();
+            });
+
+            document.getElementById('9').addEventListener("click", (e) => {
+                elementSelectedD = 9;
+                DinnerSelected9();
+            });
+
+            document.getElementById('10').addEventListener("click", (e) => {
+                elementSelectedD = 10;
+                DinnerSelected10();
+            });
+
+            document.getElementById('11').addEventListener("click", (e) => {
+                elementSelectedD = 11;
+                DinnerSelected11();
+            });
+
+            document.getElementById("popUpButtonValidate").addEventListener("click", () => {
+                if (elementSelectedD === -1) {
+                    return
+                }
+                console.log(elementSelectedD);
+                console.log(recipesArray[0]);
+                localStorage.setItem('sundayDinner', JSON.stringify(recipesArray[elementSelectedD]));
+                console.log(localStorage);
+                elementSelectedD = -1;
+                document.getElementById('popUpCard').remove();
+                document.getElementById("sundayDinner").classList.add("buttonSelected");;
+            });
+
+        }, 400)
+    });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    // document.getElementById("tuesdayBreakfast").addEventListener("click", () => {
+    //     setTimeout(() => {
+    //         main.classList.add('visibilityHidden');
+    //         popUpTuesday.classList.remove('visibilityHidden');
+    //     }, 400)
+    // });
+
+    // document.getElementById("wednesdayBreakfast").addEventListener("click", () => {
+    //     setTimeout(() => {
+    //         main.classList.add('visibilityHidden');
+    //         popUpWednesday.classList.remove('visibilityHidden');
+    //     }, 400)
+    // });
+
+    // document.getElementById("thursdayBreakfast").addEventListener("click", () => {
+    //     setTimeout(() => {
+    //         main.classList.add('visibilityHidden');
+    //         popUpThursday.classList.remove('visibilityHidden');
+    //     }, 400)
+    // });
+
+    // document.getElementById("fridayBreakfast").addEventListener("click", () => {
+    //     setTimeout(() => {
+    //         main.classList.add('visibilityHidden');
+    //         popUpFriday.classList.remove('visibilityHidden');
+    //     }, 400)
+    // });
+
+    // document.getElementById("saturdayBreakfast").addEventListener("click", () => {
+    //     setTimeout(() => {
+    //         main.classList.add('visibilityHidden');
+    //         popUpSaturday.classList.remove('visibilityHidden');
+    //     }, 400)
+    // });
+
+    // document.getElementById("sundayBreakfast").addEventListener("click", () => {
+    //     setTimeout(() => {
+    //         main.classList.add('visibilityHidden');
+    //         popUpSunday.classList.remove('visibilityHidden');
+    //     }, 400)
+    // });
+
+    // // Apparition popUp "Lunch" par jour de la semaine  
+    // document.getElementById("mondayLunch").addEventListener("click", () => {
+    //     setTimeout(() => {
+    //         main.classList.add('visibilityHidden');
+    //         popUpMonday.classList.remove('visibilityHidden');
+    //     }, 400)
+    // });
+
+    // document.getElementById("tuesdayLunch").addEventListener("click", () => {
+    //     setTimeout(() => {
+    //         main.classList.add('visibilityHidden');
+    //         popUpTuesday.classList.remove('visibilityHidden');
+    //     }, 400)
+    // });
+
+    // document.getElementById("wednesdayLunch").addEventListener("click", () => {
+    //     setTimeout(() => {
+    //         main.classList.add('visibilityHidden');
+    //         popUpWednesday.classList.remove('visibilityHidden');
+    //     }, 400)
+    // });
+
+    // document.getElementById("thursdayLunch").addEventListener("click", () => {
+    //     setTimeout(() => {
+    //         main.classList.add('visibilityHidden');
+    //         popUpThursday.classList.remove('visibilityHidden');
+    //     }, 400)
+    // });
+
+    // document.getElementById("fridayLunch").addEventListener("click", () => {
+    //     setTimeout(() => {
+    //         main.classList.add('visibilityHidden');
+    //         popUpFriday.classList.remove('visibilityHidden');
+    //     }, 400)
+    // });
+
+    // document.getElementById("saturdayLunch").addEventListener("click", () => {
+    //     setTimeout(() => {
+    //         main.classList.add('visibilityHidden');
+    //         popUpSaturday.classList.remove('visibilityHidden');
+    //     }, 400)
+    // });
+
+    // document.getElementById("sundayLunch").addEventListener("click", () => {
+    //     setTimeout(() => {
+    //         main.classList.add('visibilityHidden');
+    //         popUpSunday.classList.remove('visibilityHidden');
+    //     }, 400)
+    // });
+
+    // //*************************Bouton return 
+    // document.addEventListener("click", (e) => {
+    //     if (e.target.className === "fa-solid fa-arrow-left") {
+    //         popUpMondayB.classList.add('visibilityHidden');
+    //         popUpMonday.classList.add("visibilityHidden");
+    //         popUpTuesday.classList.add("visibilityHidden");
+    //         popUpWednesday.classList.add("visibilityHidden");
+    //         popUpThursday.classList.add("visibilityHidden");
+    //         // popUpFriday.classList.add("visibilityHidden");
+    //         // popUpSaturdayclassList.add("visibilityHidden");
+    //         // popUpSunday.classList.add("visibilityHidden");            
+    //         main.classList.remove('visibilityHidden');
+    //     }
+    // });
 
     //Recettes 
 
@@ -176,97 +1795,95 @@ const main = () => {
     recipesArray.push(new recipe("11", "Hamburguesa casera", ["Pan hamburguesa", "Pechuga de pollo", "Cebolla", "Lechuga", "Queso oaxaca", "Mayonessa / Ketchup"]));
 
 
-// Apparition cartes plats PopUp MONDAY BREAKFAST
+    // Apparition cartes plats PopUp MONDAY BREAKFAST
 
     //********************** Fonction creation cartes PopUp MONDAY BREAKFAST
-    const createCardLunchMondayB = (element) => {
-        cardMondayB += `<a href="#" class="popUpCard flexCenter" id="${element.number}">
-            <h2>${element.name}</h2>
-    </a>`
-        cardContainerMondayB.innerHTML = cardMondayB;
-    }
-    // ********************* Boucle pour crea cartes pour chaques recettes (BREAKFAST)
-    breakfastRecipesArray.forEach(element => {
-        createCardLunchMondayB(element);
-    });
+    // const createCardLunchMondayB = (element) => {
+    //     cardMondayB += `<a href="#" class="popUpCard flexCenter" id="${element.number}">
+    //         <h2>${element.name}</h2>
+    // </a>`
+    //     document.getElementById('cardContainer')
+    //     console.log(document.getElementById('cardContainer'));
+    // }
+    // // ********************* Boucle pour crea cartes pour chaques recettes (BREAKFAST)
+    // breakfastRecipesArray.forEach(element => {
+    //     createCardLunchMondayB(element);
+    // });
 
-    document.getElementById('B0').addEventListener("click", (e) => {
-        elementSelectedB = 0;
-        document.getElementById("B0").classList.add("popUpCardSelect");
-        document.getElementById("B1").classList.add("visibilityHidden");
-        document.getElementById("2B").classList.add("visibilityHidden");
-        document.getElementById("B3").classList.add("visibilityHidden");
-        document.getElementById("B4").classList.add("visibilityHidden");
-        document.getElementById("B5").classList.add("visibilityHidden");
-        document.getElementById("B6").classList.add("visibilityHidden");
-    });
+    // document.getElementById('B0').addEventListener("click", (e) => {
+    //     elementSelectedB = 0;
+    //     document.getElementById("B0").classList.add("popUpCardSelect");
+    //     document.getElementById("B1").classList.add("visibilityHidden");
+    //     document.getElementById("2B").classList.add("visibilityHidden");
+    //     document.getElementById("B3").classList.add("visibilityHidden");
+    //     document.getElementById("B4").classList.add("visibilityHidden");
+    //     document.getElementById("B5").classList.add("visibilityHidden");
+    //     document.getElementById("B6").classList.add("visibilityHidden");
+    // });
 
-    document.getElementById('B1').addEventListener("click", (e) => {
-        elementSelectedB = 1;
-        document.getElementById("B1").classList.add("popUpCardSelect");
-        document.getElementById("B0").classList.add("visibilityHidden");
-        document.getElementById("B2").classList.add("visibilityHidden");
-        document.getElementById("B3").classList.add("visibilityHidden");
-        document.getElementById("B4").classList.add("visibilityHidden");
-        document.getElementById("B5").classList.add("visibilityHidden");
-        document.getElementById("B6").classList.add("visibilityHidden");
-    });
+    // document.getElementById('B1').addEventListener("click", (e) => {
+    //     elementSelectedB = 1;
+    //     document.getElementById("B1").classList.add("popUpCardSelect");
+    //     document.getElementById("B0").classList.add("visibilityHidden");
+    //     document.getElementById("B2").classList.add("visibilityHidden");
+    //     document.getElementById("B3").classList.add("visibilityHidden");
+    //     document.getElementById("B4").classList.add("visibilityHidden");
+    //     document.getElementById("B5").classList.add("visibilityHidden");
+    //     document.getElementById("B6").classList.add("visibilityHidden");
+    // });
 
-    document.getElementById('B2').addEventListener("click", (e) => {
-        elementSelectedB = 2;
-        document.getElementById("B2").classList.add("popUpCardSelect");
-        document.getElementById("B1").classList.add("visibilityHidden");
-        document.getElementById("B0").classList.add("visibilityHidden");
-        document.getElementById("B3").classList.add("visibilityHidden");
-        document.getElementById("B4").classList.add("visibilityHidden");
-        document.getElementById("B5").classList.add("visibilityHidden");
-        document.getElementById("B6").classList.add("visibilityHidden");
-    });
+    // document.getElementById('B2').addEventListener("click", (e) => {
+    //     elementSelectedB = 2;
+    //     document.getElementById("B2").classList.add("popUpCardSelect");
+    //     document.getElementById("B1").classList.add("visibilityHidden");
+    //     document.getElementById("B0").classList.add("visibilityHidden");
+    //     document.getElementById("B3").classList.add("visibilityHidden");
+    //     document.getElementById("B4").classList.add("visibilityHidden");
+    //     document.getElementById("B5").classList.add("visibilityHidden");
+    //     document.getElementById("B6").classList.add("visibilityHidden");
+    // });
 
-    document.getElementById('B3').addEventListener("click", (e) => {
-        elementSelectedB = 3;
-        document.getElementById("B3").classList.add("popUpCardSelect");
-        document.getElementById("B1").classList.add("visibilityHidden");
-        document.getElementById("B2").classList.add("visibilityHidden");
-        document.getElementById("B0").classList.add("visibilityHidden");
-        document.getElementById("B4").classList.add("visibilityHidden");
-        document.getElementById("B5").classList.add("visibilityHidden");
-        document.getElementById("B6").classList.add("visibilityHidden");
-    });
+    // document.getElementById('B3').addEventListener("click", (e) => {
+    //     elementSelectedB = 3;
+    //     document.getElementById("B3").classList.add("popUpCardSelect");
+    //     document.getElementById("B1").classList.add("visibilityHidden");
+    //     document.getElementById("B2").classList.add("visibilityHidden");
+    //     document.getElementById("B0").classList.add("visibilityHidden");
+    //     document.getElementById("B4").classList.add("visibilityHidden");
+    //     document.getElementById("B5").classList.add("visibilityHidden");
+    //     document.getElementById("B6").classList.add("visibilityHidden");
+    // });
 
-    document.getElementById('B4').addEventListener("click", (e) => {
-        elementSelectedB = 4;
-        document.getElementById("B4").classList.add("popUpCardSelect");
-        document.getElementById("B1").classList.add("visibilityHidden");
-        document.getElementById("B2").classList.add("visibilityHidden");
-        document.getElementById("B3").classList.add("visibilityHidden");
-        document.getElementById("B0").classList.add("visibilityHidden");
-        document.getElementById("B5").classList.add("visibilityHidden");
-        document.getElementById("B6").classList.add("visibilityHidden");
-    });
+    // document.getElementById('B4').addEventListener("click", (e) => {
+    //     elementSelectedB = 4;
+    //     document.getElementById("B4").classList.add("popUpCardSelect");
+    //     document.getElementById("B1").classList.add("visibilityHidden");
+    //     document.getElementById("B2").classList.add("visibilityHidden");
+    //     document.getElementById("B3").classList.add("visibilityHidden");
+    //     document.getElementById("B0").classList.add("visibilityHidden");
+    //     document.getElementById("B5").classList.add("visibilityHidden");
+    //     document.getElementById("B6").classList.add("visibilityHidden");
+    // });
 
-    document.getElementById('B5').addEventListener("click", (e) => {
-        elementSelectedB = 5;
-        document.getElementById("B5").classList.add("popUpCardSelect");
-        document.getElementById("B1").classList.add("visibilityHidden");
-        document.getElementById("B2").classList.add("visibilityHidden");
-        document.getElementById("B3").classList.add("visibilityHidden");
-        document.getElementById("B4").classList.add("visibilityHidden");
-        document.getElementById("B0").classList.add("visibilityHidden");
-        document.getElementById("B6").classList.add("visibilityHidden");
-    });
+    // document.getElementById('B5').addEventListener("click", (e) => {
+    //     elementSelectedB = 5;
+    //     document.getElementById("B5").classList.add("popUpCardSelect");
+    //     document.getElementById("B1").classList.add("visibilityHidden");
+    //     document.getElementById("B2").classList.add("visibilityHidden");
+    //     document.getElementById("B3").classList.add("visibilityHidden");
+    //     document.getElementById("B4").classList.add("visibilityHidden");
+    //     document.getElementById("B0").classList.add("visibilityHidden");
+    //     document.getElementById("B6").classList.add("visibilityHidden");
+    // });
 
-    //************************ Bouton reset BREAKFAST MONDAY 
-    document.getElementById("resetButtonMondayB").addEventListener("click", () => {
-        elementSelectedB = -1;
-        removeSelectedRecipeB();
-        removeVisibilityHidden();
-        removeSelectedButton("monday");
-        localStorage.removeItem("mondayLunch");
-    });
-
-
-
+    // //************************ Bouton reset BREAKFAST MONDAY 
+    // document.getElementById("resetButtonMondayB").addEventListener("click", () => {
+    //     elementSelectedB = -1;
+    //     removeSelectedRecipeB();
+    //     removeVisibilityHidden();
+    //     removeSelectedButton("monday");
+    //     localStorage.removeItem("mondayLunch");
+    // });
 
 
 
@@ -275,246 +1892,249 @@ const main = () => {
 
 
 
-    // Apparition cartes plats PopUp MONDAY LUNCH
 
-    //********************** Fonction creation cartes PopUp MONDAY
-    const createCardLunchMonday = (element) => {
-        cardMonday += `<a href="#" class="popUpCard flexCenter" id="${element.number}">
-            <h2>${element.name}</h2>
-    </a>`
-        cardContainerMonday.innerHTML = cardMonday;
-    }
-    // ********************* Boucle pour crea cartes pour chaques recettes (lunch)
-    recipesArray.forEach(element => {
-        createCardLunchMonday(element);
-    });
 
-    // Evenement cartes Lunch Monday 
-    document.getElementById('0').addEventListener("click", (e) => {
-        elementSelected = 0;
-        document.getElementById("0").classList.add("popUpCardSelect");
-        document.getElementById("1").classList.add("visibilityHidden");
-        document.getElementById("2").classList.add("visibilityHidden");
-        document.getElementById("3").classList.add("visibilityHidden");
-        document.getElementById("4").classList.add("visibilityHidden");
-        document.getElementById("5").classList.add("visibilityHidden");
-        document.getElementById("6").classList.add("visibilityHidden");
-        document.getElementById("7").classList.add("visibilityHidden");
-        document.getElementById("8").classList.add("visibilityHidden");
-        document.getElementById("9").classList.add("visibilityHidden");
-        document.getElementById("10").classList.add("visibilityHidden");
-        document.getElementById("11").classList.add("visibilityHidden");
-    }
-    );
 
-    document.getElementById('1').addEventListener("click", (e) => {
-        elementSelected = 1;
-        document.getElementById("1").classList.add("popUpCardSelect");
-        document.getElementById("0").classList.add("visibilityHidden");
-        document.getElementById("2").classList.add("visibilityHidden");
-        document.getElementById("3").classList.add("visibilityHidden");
-        document.getElementById("4").classList.add("visibilityHidden");
-        document.getElementById("5").classList.add("visibilityHidden");
-        document.getElementById("6").classList.add("visibilityHidden");
-        document.getElementById("7").classList.add("visibilityHidden");
-        document.getElementById("8").classList.add("visibilityHidden");
-        document.getElementById("9").classList.add("visibilityHidden");
-        document.getElementById("10").classList.add("visibilityHidden");
-        document.getElementById("11").classList.add("visibilityHidden");
-    }
-    );
+    // // Apparition cartes plats PopUp MONDAY LUNCH
 
-    document.getElementById('2').addEventListener("click", (e) => {
-        elementSelected = 2;
-        document.getElementById("2").classList.add("popUpCardSelect");
-        document.getElementById("0").classList.add("visibilityHidden");
-        document.getElementById("1").classList.add("visibilityHidden");
-        document.getElementById("3").classList.add("visibilityHidden");
-        document.getElementById("4").classList.add("visibilityHidden");
-        document.getElementById("5").classList.add("visibilityHidden");
-        document.getElementById("6").classList.add("visibilityHidden");
-        document.getElementById("7").classList.add("visibilityHidden");
-        document.getElementById("8").classList.add("visibilityHidden");
-        document.getElementById("9").classList.add("visibilityHidden");
-        document.getElementById("10").classList.add("visibilityHidden");
-        document.getElementById("11").classList.add("visibilityHidden");
-    }
-    );
+    // //********************** Fonction creation cartes PopUp MONDAY
+    // const createCardLunchMonday = (element) => {
+    //     cardMonday += `<a href="#" class="popUpCard flexCenter" id="${element.number}">
+    //         <h2>${element.name}</h2>
+    // </a>`
+    //     cardContainerMonday.innerHTML = cardMonday;
+    // }
+    // // ********************* Boucle pour crea cartes pour chaques recettes (lunch)
+    // recipesArray.forEach(element => {
+    //     createCardLunchMonday(element);
+    // });
 
-    document.getElementById('3').addEventListener("click", (e) => {
-        elementSelected = 3;
-        document.getElementById("3").classList.add("popUpCardSelect");
-        document.getElementById("0").classList.add("visibilityHidden");
-        document.getElementById("1").classList.add("visibilityHidden");
-        document.getElementById("2").classList.add("visibilityHidden");
-        document.getElementById("4").classList.add("visibilityHidden");
-        document.getElementById("5").classList.add("visibilityHidden");
-        document.getElementById("6").classList.add("visibilityHidden");
-        document.getElementById("7").classList.add("visibilityHidden");
-        document.getElementById("8").classList.add("visibilityHidden");
-        document.getElementById("9").classList.add("visibilityHidden");
-        document.getElementById("10").classList.add("visibilityHidden");
-        document.getElementById("11").classList.add("visibilityHidden");
-    }
-    );
+    // // Evenement cartes Lunch Monday 
+    // document.getElementById('0').addEventListener("click", (e) => {
+    //     elementSelected = 0;
+    //     document.getElementById("0").classList.add("popUpCardSelect");
+    //     document.getElementById("1").classList.add("visibilityHidden");
+    //     document.getElementById("2").classList.add("visibilityHidden");
+    //     document.getElementById("3").classList.add("visibilityHidden");
+    //     document.getElementById("4").classList.add("visibilityHidden");
+    //     document.getElementById("5").classList.add("visibilityHidden");
+    //     document.getElementById("6").classList.add("visibilityHidden");
+    //     document.getElementById("7").classList.add("visibilityHidden");
+    //     document.getElementById("8").classList.add("visibilityHidden");
+    //     document.getElementById("9").classList.add("visibilityHidden");
+    //     document.getElementById("10").classList.add("visibilityHidden");
+    //     document.getElementById("11").classList.add("visibilityHidden");
+    // }
+    // );
 
-    document.getElementById('4').addEventListener("click", (e) => {
-        elementSelected = 4;
-        document.getElementById("4").classList.add("popUpCardSelect");
-        document.getElementById("0").classList.add("visibilityHidden");
-        document.getElementById("1").classList.add("visibilityHidden");
-        document.getElementById("2").classList.add("visibilityHidden");
-        document.getElementById("3").classList.add("visibilityHidden");
-        document.getElementById("5").classList.add("visibilityHidden");
-        document.getElementById("6").classList.add("visibilityHidden");
-        document.getElementById("7").classList.add("visibilityHidden");
-        document.getElementById("8").classList.add("visibilityHidden");
-        document.getElementById("9").classList.add("visibilityHidden");
-        document.getElementById("10").classList.add("visibilityHidden");
-        document.getElementById("11").classList.add("visibilityHidden");
-    }
-    );
+    // document.getElementById('1').addEventListener("click", (e) => {
+    //     elementSelected = 1;
+    //     document.getElementById("1").classList.add("popUpCardSelect");
+    //     document.getElementById("0").classList.add("visibilityHidden");
+    //     document.getElementById("2").classList.add("visibilityHidden");
+    //     document.getElementById("3").classList.add("visibilityHidden");
+    //     document.getElementById("4").classList.add("visibilityHidden");
+    //     document.getElementById("5").classList.add("visibilityHidden");
+    //     document.getElementById("6").classList.add("visibilityHidden");
+    //     document.getElementById("7").classList.add("visibilityHidden");
+    //     document.getElementById("8").classList.add("visibilityHidden");
+    //     document.getElementById("9").classList.add("visibilityHidden");
+    //     document.getElementById("10").classList.add("visibilityHidden");
+    //     document.getElementById("11").classList.add("visibilityHidden");
+    // }
+    // );
 
-    document.getElementById('5').addEventListener("click", (e) => {
-        elementSelected = 5;
-        document.getElementById("5").classList.add("popUpCardSelect");
-        document.getElementById("0").classList.add("visibilityHidden");
-        document.getElementById("1").classList.add("visibilityHidden");
-        document.getElementById("2").classList.add("visibilityHidden");
-        document.getElementById("3").classList.add("visibilityHidden");
-        document.getElementById("4").classList.add("visibilityHidden");
-        document.getElementById("6").classList.add("visibilityHidden");
-        document.getElementById("7").classList.add("visibilityHidden");
-        document.getElementById("8").classList.add("visibilityHidden");
-        document.getElementById("9").classList.add("visibilityHidden");
-        document.getElementById("10").classList.add("visibilityHidden");
-        document.getElementById("11").classList.add("visibilityHidden");
-    }
-    );
+    // document.getElementById('2').addEventListener("click", (e) => {
+    //     elementSelected = 2;
+    //     document.getElementById("2").classList.add("popUpCardSelect");
+    //     document.getElementById("0").classList.add("visibilityHidden");
+    //     document.getElementById("1").classList.add("visibilityHidden");
+    //     document.getElementById("3").classList.add("visibilityHidden");
+    //     document.getElementById("4").classList.add("visibilityHidden");
+    //     document.getElementById("5").classList.add("visibilityHidden");
+    //     document.getElementById("6").classList.add("visibilityHidden");
+    //     document.getElementById("7").classList.add("visibilityHidden");
+    //     document.getElementById("8").classList.add("visibilityHidden");
+    //     document.getElementById("9").classList.add("visibilityHidden");
+    //     document.getElementById("10").classList.add("visibilityHidden");
+    //     document.getElementById("11").classList.add("visibilityHidden");
+    // }
+    // );
 
-    document.getElementById('6').addEventListener("click", (e) => {
-        elementSelected = 6;
-        document.getElementById("6").classList.add("popUpCardSelect");
-        document.getElementById("0").classList.add("visibilityHidden");
-        document.getElementById("1").classList.add("visibilityHidden");
-        document.getElementById("2").classList.add("visibilityHidden");
-        document.getElementById("3").classList.add("visibilityHidden");
-        document.getElementById("4").classList.add("visibilityHidden");
-        document.getElementById("5").classList.add("visibilityHidden");
-        document.getElementById("7").classList.add("visibilityHidden");
-        document.getElementById("8").classList.add("visibilityHidden");
-        document.getElementById("9").classList.add("visibilityHidden");
-        document.getElementById("10").classList.add("visibilityHidden");
-        document.getElementById("11").classList.add("visibilityHidden");
-    }
-    );
+    // document.getElementById('3').addEventListener("click", (e) => {
+    //     elementSelected = 3;
+    //     document.getElementById("3").classList.add("popUpCardSelect");
+    //     document.getElementById("0").classList.add("visibilityHidden");
+    //     document.getElementById("1").classList.add("visibilityHidden");
+    //     document.getElementById("2").classList.add("visibilityHidden");
+    //     document.getElementById("4").classList.add("visibilityHidden");
+    //     document.getElementById("5").classList.add("visibilityHidden");
+    //     document.getElementById("6").classList.add("visibilityHidden");
+    //     document.getElementById("7").classList.add("visibilityHidden");
+    //     document.getElementById("8").classList.add("visibilityHidden");
+    //     document.getElementById("9").classList.add("visibilityHidden");
+    //     document.getElementById("10").classList.add("visibilityHidden");
+    //     document.getElementById("11").classList.add("visibilityHidden");
+    // }
+    // );
 
-    document.getElementById('7').addEventListener("click", (e) => {
-        elementSelected = 7;
-        document.getElementById("7").classList.add("popUpCardSelect");
-        document.getElementById("0").classList.add("visibilityHidden");
-        document.getElementById("1").classList.add("visibilityHidden");
-        document.getElementById("2").classList.add("visibilityHidden");
-        document.getElementById("3").classList.add("visibilityHidden");
-        document.getElementById("4").classList.add("visibilityHidden");
-        document.getElementById("5").classList.add("visibilityHidden");
-        document.getElementById("6").classList.add("visibilityHidden");
-        document.getElementById("8").classList.add("visibilityHidden");
-        document.getElementById("9").classList.add("visibilityHidden");
-        document.getElementById("10").classList.add("visibilityHidden");
-        document.getElementById("11").classList.add("visibilityHidden");
-    }
-    );
+    // document.getElementById('4').addEventListener("click", (e) => {
+    //     elementSelected = 4;
+    //     document.getElementById("4").classList.add("popUpCardSelect");
+    //     document.getElementById("0").classList.add("visibilityHidden");
+    //     document.getElementById("1").classList.add("visibilityHidden");
+    //     document.getElementById("2").classList.add("visibilityHidden");
+    //     document.getElementById("3").classList.add("visibilityHidden");
+    //     document.getElementById("5").classList.add("visibilityHidden");
+    //     document.getElementById("6").classList.add("visibilityHidden");
+    //     document.getElementById("7").classList.add("visibilityHidden");
+    //     document.getElementById("8").classList.add("visibilityHidden");
+    //     document.getElementById("9").classList.add("visibilityHidden");
+    //     document.getElementById("10").classList.add("visibilityHidden");
+    //     document.getElementById("11").classList.add("visibilityHidden");
+    // }
+    // );
 
-    document.getElementById('8').addEventListener("click", (e) => {
-        elementSelected = 8;
-        document.getElementById("8").classList.add("popUpCardSelect");
-        document.getElementById("0").classList.add("visibilityHidden");
-        document.getElementById("1").classList.add("visibilityHidden");
-        document.getElementById("2").classList.add("visibilityHidden");
-        document.getElementById("3").classList.add("visibilityHidden");
-        document.getElementById("4").classList.add("visibilityHidden");
-        document.getElementById("5").classList.add("visibilityHidden");
-        document.getElementById("6").classList.add("visibilityHidden");
-        document.getElementById("7").classList.add("visibilityHidden");
-        document.getElementById("9").classList.add("visibilityHidden");
-        document.getElementById("10").classList.add("visibilityHidden");
-        document.getElementById("11").classList.add("visibilityHidden");
-    }
-    );
+    // document.getElementById('5').addEventListener("click", (e) => {
+    //     elementSelected = 5;
+    //     document.getElementById("5").classList.add("popUpCardSelect");
+    //     document.getElementById("0").classList.add("visibilityHidden");
+    //     document.getElementById("1").classList.add("visibilityHidden");
+    //     document.getElementById("2").classList.add("visibilityHidden");
+    //     document.getElementById("3").classList.add("visibilityHidden");
+    //     document.getElementById("4").classList.add("visibilityHidden");
+    //     document.getElementById("6").classList.add("visibilityHidden");
+    //     document.getElementById("7").classList.add("visibilityHidden");
+    //     document.getElementById("8").classList.add("visibilityHidden");
+    //     document.getElementById("9").classList.add("visibilityHidden");
+    //     document.getElementById("10").classList.add("visibilityHidden");
+    //     document.getElementById("11").classList.add("visibilityHidden");
+    // }
+    // );
 
-    document.getElementById('9').addEventListener("click", (e) => {
-        elementSelected = 9;
-        document.getElementById("9").classList.add("popUpCardSelect");
-        document.getElementById("0").classList.add("visibilityHidden");
-        document.getElementById("1").classList.add("visibilityHidden");
-        document.getElementById("2").classList.add("visibilityHidden");
-        document.getElementById("3").classList.add("visibilityHidden");
-        document.getElementById("4").classList.add("visibilityHidden");
-        document.getElementById("5").classList.add("visibilityHidden");
-        document.getElementById("6").classList.add("visibilityHidden");
-        document.getElementById("7").classList.add("visibilityHidden");
-        document.getElementById("8").classList.add("visibilityHidden");
-        document.getElementById("10").classList.add("visibilityHidden");
-        document.getElementById("11").classList.add("visibilityHidden");
-    }
-    );
+    // document.getElementById('6').addEventListener("click", (e) => {
+    //     elementSelected = 6;
+    //     document.getElementById("6").classList.add("popUpCardSelect");
+    //     document.getElementById("0").classList.add("visibilityHidden");
+    //     document.getElementById("1").classList.add("visibilityHidden");
+    //     document.getElementById("2").classList.add("visibilityHidden");
+    //     document.getElementById("3").classList.add("visibilityHidden");
+    //     document.getElementById("4").classList.add("visibilityHidden");
+    //     document.getElementById("5").classList.add("visibilityHidden");
+    //     document.getElementById("7").classList.add("visibilityHidden");
+    //     document.getElementById("8").classList.add("visibilityHidden");
+    //     document.getElementById("9").classList.add("visibilityHidden");
+    //     document.getElementById("10").classList.add("visibilityHidden");
+    //     document.getElementById("11").classList.add("visibilityHidden");
+    // }
+    // );
 
-    document.getElementById('10').addEventListener("click", (e) => {
-        elementSelected = 10;
-        document.getElementById("10").classList.add("popUpCardSelect");
-        document.getElementById("0").classList.add("visibilityHidden");
-        document.getElementById("1").classList.add("visibilityHidden");
-        document.getElementById("2").classList.add("visibilityHidden");
-        document.getElementById("3").classList.add("visibilityHidden");
-        document.getElementById("4").classList.add("visibilityHidden");
-        document.getElementById("5").classList.add("visibilityHidden");
-        document.getElementById("6").classList.add("visibilityHidden");
-        document.getElementById("7").classList.add("visibilityHidden");
-        document.getElementById("8").classList.add("visibilityHidden");
-        document.getElementById("9").classList.add("visibilityHidden");
-        document.getElementById("11").classList.add("visibilityHidden");
-    }
-    );
+    // document.getElementById('7').addEventListener("click", (e) => {
+    //     elementSelected = 7;
+    //     document.getElementById("7").classList.add("popUpCardSelect");
+    //     document.getElementById("0").classList.add("visibilityHidden");
+    //     document.getElementById("1").classList.add("visibilityHidden");
+    //     document.getElementById("2").classList.add("visibilityHidden");
+    //     document.getElementById("3").classList.add("visibilityHidden");
+    //     document.getElementById("4").classList.add("visibilityHidden");
+    //     document.getElementById("5").classList.add("visibilityHidden");
+    //     document.getElementById("6").classList.add("visibilityHidden");
+    //     document.getElementById("8").classList.add("visibilityHidden");
+    //     document.getElementById("9").classList.add("visibilityHidden");
+    //     document.getElementById("10").classList.add("visibilityHidden");
+    //     document.getElementById("11").classList.add("visibilityHidden");
+    // }
+    // );
 
-    document.getElementById('11').addEventListener("click", (e) => {
-        elementSelected = 11;
-        document.getElementById("11").classList.add("popUpCardSelect");
-        document.getElementById("0").classList.add("visibilityHidden");
-        document.getElementById("1").classList.add("visibilityHidden");
-        document.getElementById("2").classList.add("visibilityHidden");
-        document.getElementById("3").classList.add("visibilityHidden");
-        document.getElementById("4").classList.add("visibilityHidden");
-        document.getElementById("5").classList.add("visibilityHidden");
-        document.getElementById("6").classList.add("visibilityHidden");
-        document.getElementById("7").classList.add("visibilityHidden");
-        document.getElementById("8").classList.add("visibilityHidden");
-        document.getElementById("9").classList.add("visibilityHidden");
-        document.getElementById("10").classList.add("visibilityHidden");
-    }
-    );
+    // document.getElementById('8').addEventListener("click", (e) => {
+    //     elementSelected = 8;
+    //     document.getElementById("8").classList.add("popUpCardSelect");
+    //     document.getElementById("0").classList.add("visibilityHidden");
+    //     document.getElementById("1").classList.add("visibilityHidden");
+    //     document.getElementById("2").classList.add("visibilityHidden");
+    //     document.getElementById("3").classList.add("visibilityHidden");
+    //     document.getElementById("4").classList.add("visibilityHidden");
+    //     document.getElementById("5").classList.add("visibilityHidden");
+    //     document.getElementById("6").classList.add("visibilityHidden");
+    //     document.getElementById("7").classList.add("visibilityHidden");
+    //     document.getElementById("9").classList.add("visibilityHidden");
+    //     document.getElementById("10").classList.add("visibilityHidden");
+    //     document.getElementById("11").classList.add("visibilityHidden");
+    // }
+    // );
 
-    // *********************** Bouton valider LUNCH MONDAY
-    document.getElementById("popUpButtonMonday").addEventListener("click", () => {
-        if (elementSelected === -1) {
-            return
-        }
-        localStorage.setItem('mondayLunch', JSON.stringify(recipesArray[elementSelected]));
-        console.log(localStorage);
-        elementSelected = -1;
-        popUpMonday.classList.add("visibilityHidden");
-        main.classList.remove('visibilityHidden');
-        addSelectedButton("monday");
-    });
+    // document.getElementById('9').addEventListener("click", (e) => {
+    //     elementSelected = 9;
+    //     document.getElementById("9").classList.add("popUpCardSelect");
+    //     document.getElementById("0").classList.add("visibilityHidden");
+    //     document.getElementById("1").classList.add("visibilityHidden");
+    //     document.getElementById("2").classList.add("visibilityHidden");
+    //     document.getElementById("3").classList.add("visibilityHidden");
+    //     document.getElementById("4").classList.add("visibilityHidden");
+    //     document.getElementById("5").classList.add("visibilityHidden");
+    //     document.getElementById("6").classList.add("visibilityHidden");
+    //     document.getElementById("7").classList.add("visibilityHidden");
+    //     document.getElementById("8").classList.add("visibilityHidden");
+    //     document.getElementById("10").classList.add("visibilityHidden");
+    //     document.getElementById("11").classList.add("visibilityHidden");
+    // }
+    // );
 
-    //************************ Bouton reset LUNCH MONDAY 
-    document.getElementById("resetButtonMonday").addEventListener("click", () => {
-        elementSelected = -1;
-        removeSelectedRecipe();
-        removeVisibilityHidden();
-        removeSelectedButton("monday");
-        localStorage.removeItem("mondayLunch");
-    });
+    // document.getElementById('10').addEventListener("click", (e) => {
+    //     elementSelected = 10;
+    //     document.getElementById("10").classList.add("popUpCardSelect");
+    //     document.getElementById("0").classList.add("visibilityHidden");
+    //     document.getElementById("1").classList.add("visibilityHidden");
+    //     document.getElementById("2").classList.add("visibilityHidden");
+    //     document.getElementById("3").classList.add("visibilityHidden");
+    //     document.getElementById("4").classList.add("visibilityHidden");
+    //     document.getElementById("5").classList.add("visibilityHidden");
+    //     document.getElementById("6").classList.add("visibilityHidden");
+    //     document.getElementById("7").classList.add("visibilityHidden");
+    //     document.getElementById("8").classList.add("visibilityHidden");
+    //     document.getElementById("9").classList.add("visibilityHidden");
+    //     document.getElementById("11").classList.add("visibilityHidden");
+    // }
+    // );
+
+    // document.getElementById('11').addEventListener("click", (e) => {
+    //     elementSelected = 11;
+    //     document.getElementById("11").classList.add("popUpCardSelect");
+    //     document.getElementById("0").classList.add("visibilityHidden");
+    //     document.getElementById("1").classList.add("visibilityHidden");
+    //     document.getElementById("2").classList.add("visibilityHidden");
+    //     document.getElementById("3").classList.add("visibilityHidden");
+    //     document.getElementById("4").classList.add("visibilityHidden");
+    //     document.getElementById("5").classList.add("visibilityHidden");
+    //     document.getElementById("6").classList.add("visibilityHidden");
+    //     document.getElementById("7").classList.add("visibilityHidden");
+    //     document.getElementById("8").classList.add("visibilityHidden");
+    //     document.getElementById("9").classList.add("visibilityHidden");
+    //     document.getElementById("10").classList.add("visibilityHidden");
+    // }
+    // );
+
+    // // *********************** Bouton valider LUNCH MONDAY
+    // document.getElementById("popUpButtonMonday").addEventListener("click", () => {
+    //     if (elementSelected === -1) {
+    //         return
+    //     }
+    //     localStorage.setItem('mondayLunch', JSON.stringify(recipesArray[elementSelected]));
+    //     console.log(localStorage);
+    //     elementSelected = -1;
+    //     popUpMonday.classList.add("visibilityHidden");
+    //     main.classList.remove('visibilityHidden');
+    //     addSelectedButton("monday");
+    // });
+
+    // //************************ Bouton reset LUNCH MONDAY 
+    // document.getElementById("resetButtonMonday").addEventListener("click", () => {
+    //     elementSelected = -1;
+    //     removeSelectedRecipe();
+    //     removeVisibilityHidden();
+    //     removeSelectedButton("monday");
+    //     localStorage.removeItem("mondayLunch");
+    // });
 
 
     // Bouton validation du plan 
