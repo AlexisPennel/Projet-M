@@ -1744,7 +1744,7 @@ const main = () => {
 
     //  Bouton valider 
     document.getElementById("validateButton").addEventListener("click", () => {
-        window.location.href = 'https://alexispennel.github.io/Projet-M/html/MyWeek.html#'
+        window.location.href = 'https://alexispennel.github.io/Projet-M/html/MyWeek.html'
     });
 
 
