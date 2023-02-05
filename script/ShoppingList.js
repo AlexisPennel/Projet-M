@@ -67,7 +67,7 @@ const main = () => {
             ingredientsList.push(element);
         }
     });
-
+    
     tuesdayLunchArray.forEach(element => {
         const SameElement = ingredientsList.indexOf(element);
         if (SameElement === -1) {
@@ -75,6 +75,13 @@ const main = () => {
         }
     });
 
+    tuesdayDinnerArray.forEach(element => {
+        const SameElement = ingredientsList.indexOf(element);
+        if (SameElement === -1) {
+            ingredientsList.push(element);
+        }
+    });
+    
      // wednesday 
      wednesdayBreakfastArray.forEach(element => {
         const SameElement = ingredientsList.indexOf(element);
@@ -82,7 +89,7 @@ const main = () => {
             ingredientsList.push(element);
         }
     });
-
+    
     wednesdayLunchArray.forEach(element => {
         const SameElement = ingredientsList.indexOf(element);
         if (SameElement === -1) {
@@ -90,6 +97,13 @@ const main = () => {
         }
     });
 
+    wednesdayDinnerArray.forEach(element => {
+        const SameElement = ingredientsList.indexOf(element);
+        if (SameElement === -1) {
+            ingredientsList.push(element);
+        }
+    });
+    
      // thursday 
      thursdayBreakfastArray.forEach(element => {
         const SameElement = ingredientsList.indexOf(element);
@@ -97,14 +111,20 @@ const main = () => {
             ingredientsList.push(element);
         }
     });
-
+    
     thursdayLunchArray.forEach(element => {
         const SameElement = ingredientsList.indexOf(element);
         if (SameElement === -1) {
             ingredientsList.push(element);
         }
     });
-
+    
+    thursdayDinnerArray.forEach(element => {
+        const SameElement = ingredientsList.indexOf(element);
+        if (SameElement === -1) {
+            ingredientsList.push(element);
+        }
+    });
      // friday 
      fridayBreakfastArray.forEach(element => {
         const SameElement = ingredientsList.indexOf(element);
@@ -112,8 +132,15 @@ const main = () => {
             ingredientsList.push(element);
         }
     });
-
+    
     fridayLunchArray.forEach(element => {
+        const SameElement = ingredientsList.indexOf(element);
+        if (SameElement === -1) {
+            ingredientsList.push(element);
+        }
+    });
+    
+    fridayDinnerArray.forEach(element => {
         const SameElement = ingredientsList.indexOf(element);
         if (SameElement === -1) {
             ingredientsList.push(element);
@@ -127,7 +154,7 @@ const main = () => {
             ingredientsList.push(element);
         }
     });
-
+    
     saturdayLunchArray.forEach(element => {
         const SameElement = ingredientsList.indexOf(element);
         if (SameElement === -1) {
@@ -135,6 +162,13 @@ const main = () => {
         }
     });
 
+    saturdayDinnerArray.forEach(element => {
+        const SameElement = ingredientsList.indexOf(element);
+        if (SameElement === -1) {
+            ingredientsList.push(element);
+        }
+    });
+    
      // sunday 
      sundayBreakfastArray.forEach(element => {
         const SameElement = ingredientsList.indexOf(element);
@@ -142,14 +176,23 @@ const main = () => {
             ingredientsList.push(element);
         }
     });
-
+    
     sundayLunchArray.forEach(element => {
+        const SameElement = ingredientsList.indexOf(element);
+        console.log(SameElement)
+        if (SameElement === -1) {
+            ingredientsList.push(element);
+        }
+        console.log("identique");
+    });
+
+    sundayDinnerArray.forEach(element => {
         const SameElement = ingredientsList.indexOf(element);
         if (SameElement === -1) {
             ingredientsList.push(element);
         }
     });
-
+    
     // integration de la liste
     ingredientsList.forEach(element => {
         createInput(element);
