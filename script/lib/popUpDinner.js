@@ -23,7 +23,7 @@ recipesArray.push(new recipe("0", "Pechuga a la plancha con verduras y pastas", 
     recipesArray.push(new recipe("9", "Omelette", ["Huevos", "Champinones", "Queso oaxaca", "Pan"]));
     recipesArray.push(new recipe("10", "Quesadillas con champinones", ["Tortillas", "Queso oaxaca", "Jamon", "Champinones"]));
     recipesArray.push(new recipe("11", "Hamburguesa casera", ["Pan hamburguesa", "Pechuga de pollo", "Cebolla", "Lechuga", "Queso oaxaca", "Mayonessa / Ketchup"]));
-
+    recipesArray.push(new recipe("12", "Libre", ["Libre"]));
 
 // Fonction apparition PopUp
 const createPopUpDinner= (element) => {
@@ -73,6 +73,7 @@ const DinnerSelected0 = () => {
     document.getElementById("9").classList.add("visibilityHidden");
     document.getElementById("10").classList.add("visibilityHidden");
     document.getElementById("11").classList.add("visibilityHidden");
+    document.getElementById("12").classList.add("visibilityHidden");
 };
 
 const DinnerSelected1 = () => {
@@ -88,6 +89,7 @@ const DinnerSelected1 = () => {
     document.getElementById("9").classList.add("visibilityHidden");
     document.getElementById("10").classList.add("visibilityHidden");
     document.getElementById("11").classList.add("visibilityHidden");
+    document.getElementById("12").classList.add("visibilityHidden");
 };
 
 const DinnerSelected2 = () => {
@@ -103,6 +105,7 @@ const DinnerSelected2 = () => {
     document.getElementById("9").classList.add("visibilityHidden");
     document.getElementById("10").classList.add("visibilityHidden");
     document.getElementById("11").classList.add("visibilityHidden");
+    document.getElementById("12").classList.add("visibilityHidden");
 };
 
 const DinnerSelected3 = () => {
@@ -118,6 +121,7 @@ const DinnerSelected3 = () => {
     document.getElementById("9").classList.add("visibilityHidden");
     document.getElementById("10").classList.add("visibilityHidden");
     document.getElementById("11").classList.add("visibilityHidden");
+    document.getElementById("12").classList.add("visibilityHidden");
 };
 
 const DinnerSelected4 = () => {
@@ -133,6 +137,7 @@ const DinnerSelected4 = () => {
     document.getElementById("9").classList.add("visibilityHidden");
     document.getElementById("10").classList.add("visibilityHidden");
     document.getElementById("11").classList.add("visibilityHidden");
+    document.getElementById("12").classList.add("visibilityHidden");
 };
 
 const DinnerSelected5 = () => {
@@ -148,6 +153,7 @@ const DinnerSelected5 = () => {
     document.getElementById("9").classList.add("visibilityHidden");
     document.getElementById("10").classList.add("visibilityHidden");
     document.getElementById("11").classList.add("visibilityHidden");
+    document.getElementById("12").classList.add("visibilityHidden");
 };
 
 const DinnerSelected6 = () => {
@@ -163,6 +169,7 @@ const DinnerSelected6 = () => {
     document.getElementById("9").classList.add("visibilityHidden");
     document.getElementById("10").classList.add("visibilityHidden");
     document.getElementById("11").classList.add("visibilityHidden");
+    document.getElementById("12").classList.add("visibilityHidden");
 };
 
 const DinnerSelected7 = () => {
@@ -178,6 +185,7 @@ const DinnerSelected7 = () => {
     document.getElementById("9").classList.add("visibilityHidden");
     document.getElementById("10").classList.add("visibilityHidden");
     document.getElementById("11").classList.add("visibilityHidden");
+    document.getElementById("12").classList.add("visibilityHidden");
 };
 
 const DinnerSelected8 = () => {
@@ -193,6 +201,7 @@ const DinnerSelected8 = () => {
     document.getElementById("9").classList.add("visibilityHidden");
     document.getElementById("10").classList.add("visibilityHidden");
     document.getElementById("11").classList.add("visibilityHidden");
+    document.getElementById("12").classList.add("visibilityHidden");
 };
 
 const DinnerSelected9 = () => {
@@ -208,6 +217,7 @@ const DinnerSelected9 = () => {
     document.getElementById("0").classList.add("visibilityHidden");
     document.getElementById("10").classList.add("visibilityHidden");
     document.getElementById("11").classList.add("visibilityHidden");
+    document.getElementById("12").classList.add("visibilityHidden");
 };
 
 const DinnerSelected10 = () => {
@@ -223,6 +233,7 @@ const DinnerSelected10 = () => {
     document.getElementById("9").classList.add("visibilityHidden");
     document.getElementById("0").classList.add("visibilityHidden");
     document.getElementById("11").classList.add("visibilityHidden");
+    document.getElementById("12").classList.add("visibilityHidden");
 };
 
 const DinnerSelected11 = () => {
@@ -238,7 +249,23 @@ const DinnerSelected11 = () => {
     document.getElementById("9").classList.add("visibilityHidden");
     document.getElementById("10").classList.add("visibilityHidden");
     document.getElementById("0").classList.add("visibilityHidden");
+    document.getElementById("12").classList.add("visibilityHidden");
 };
 
+const DinnerSelected12 = () => {
+    document.getElementById("12").classList.add("popUpCardSelect");
+    document.getElementById("1").classList.add("visibilityHidden");
+    document.getElementById("2").classList.add("visibilityHidden");
+    document.getElementById("3").classList.add("visibilityHidden");
+    document.getElementById("4").classList.add("visibilityHidden");
+    document.getElementById("5").classList.add("visibilityHidden");
+    document.getElementById("6").classList.add("visibilityHidden");
+    document.getElementById("7").classList.add("visibilityHidden");
+    document.getElementById("8").classList.add("visibilityHidden");
+    document.getElementById("9").classList.add("visibilityHidden");
+    document.getElementById("10").classList.add("visibilityHidden");
+    document.getElementById("0").classList.add("visibilityHidden");
+    document.getElementById("11").classList.add("visibilityHidden");
+};
 
-export { createPopUpDinner, DinnerSelected0, DinnerSelected1, DinnerSelected2, DinnerSelected3, DinnerSelected4, DinnerSelected5, DinnerSelected6, DinnerSelected7, DinnerSelected8, DinnerSelected9, DinnerSelected10, DinnerSelected11 };
+export { createPopUpDinner, DinnerSelected0, DinnerSelected1, DinnerSelected2, DinnerSelected3, DinnerSelected4, DinnerSelected5, DinnerSelected6, DinnerSelected7, DinnerSelected8, DinnerSelected9, DinnerSelected10, DinnerSelected11, DinnerSelected12 };

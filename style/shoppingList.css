@@ -1,0 +1,146 @@
+:root {
+  --fontSize1: 2rem;
+  --color1: #f0ead2;
+  --color1-trans: #f0ead2a6;
+  --color2: #dde5b6;
+  --color3: #adc178;
+  --color3bis: #8d9e5f;
+  --color4: #a98467;
+  --color5: #6c584c;
+  --color5-trans: #6c584cda;
+  --fontFam1: "Bubblegum Sans", cursive;
+  --fontFam2: "Open Sans", sans-serif;
+}
+
+html {
+  font-size: calc(60% + 0.8vmin);
+}
+
+h1 {
+  font-size: 2.5rem;
+  font-family: var(--fontFam1);
+}
+
+h2 {
+  font-size: 1.6rem;
+  font-family: var(--fontFam2);
+}
+
+h3 {
+  font-size: 1.3rem;
+}
+
+p {
+  font-family: var(--fontFam2);
+}
+
+a {
+  font-family: var(--fontFam2);
+}
+
+.flexCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flexCenterC {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+body {
+  width: 100vw;
+  height: auto;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  overflow: scroll;
+  background-image: url(../images/background.jpg);
+  background-size: auto;
+  background-position: auto;
+  background-repeat: no-repeat;
+}
+
+header {
+  width: 100%;
+  height: 10vh;
+  background-color: var(--color3);
+  color: var(--color1);
+  font-family: var(--fontFam1);
+}
+
+.fa-utensils {
+  font-size: 2.5rem;
+  color: var(--color1);
+  margin-right: 5%;
+}
+
+nav {
+  width: 100vw;
+  height: 5vh;
+  font-size: 1.5rem;
+  justify-content: space-around !important;
+  background-color: var(--color2);
+}
+
+nav a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: auto;
+  text-decoration: none;
+  color: var(--color5);
+}
+
+main {
+  margin-top: 10%;
+  width: 100vw;
+  height: auto;
+}
+
+main h1 {
+  color: var(--color5);
+  background-color: var(--color1-trans);
+  padding: 3%;
+  border-radius: 5%;
+}
+
+.cardContainer {
+  width: 90%;
+  height: 90%;
+  background-color: var(--color1);
+  border-radius: 10px;
+  margin-bottom: 10%;
+  align-items: flex-start !important;
+}
+
+.cardContainer h2,
+p {
+  margin-left: 3%;
+}
+
+.checkbox {
+    margin-left: 3%;
+    font-size: 1.2rem;
+    width: 100%;
+    height: 100%;
+    align-items: flex-start !important;
+}
+
+.checkbox label {
+    font-size: 1.3rem;
+}
+
+.checkbox input {
+    margin: 0;    
+    width: 1.4rem;
+    height: 2rem;
+    border: 0.15em solid currentColor;
+    border-radius: 0.15em;
+    margin-right: 2rem;
+}

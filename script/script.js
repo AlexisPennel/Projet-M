@@ -1,7 +1,7 @@
 import { removeSelectedButton } from "./lib/tools.js";
-import { BreakfastSelected0, BreakfastSelected1, BreakfastSelected2, BreakfastSelected3, BreakfastSelected4, BreakfastSelected5, createPopUpBreakfast } from "./lib/popUpBreakfast.js";
-import { createPopUpLunch, LunchSelected0, LunchSelected1, LunchSelected2, LunchSelected3, LunchSelected4, LunchSelected5, LunchSelected6, LunchSelected7, LunchSelected8, LunchSelected9, LunchSelected10, LunchSelected11 } from "./lib/popUpLunch.js";
-import { createPopUpDinner, DinnerSelected0, DinnerSelected1, DinnerSelected2, DinnerSelected3, DinnerSelected4, DinnerSelected5, DinnerSelected6, DinnerSelected7, DinnerSelected8, DinnerSelected9, DinnerSelected10, DinnerSelected11 } from "./lib/popUpDinner.js";
+import { BreakfastSelected0, BreakfastSelected1, BreakfastSelected2, BreakfastSelected3, BreakfastSelected4, BreakfastSelected5, BreakfastSelected6, createPopUpBreakfast } from "./lib/popUpBreakfast.js";
+import { createPopUpLunch, LunchSelected0, LunchSelected1, LunchSelected2, LunchSelected3, LunchSelected4, LunchSelected5, LunchSelected6, LunchSelected7, LunchSelected8, LunchSelected9, LunchSelected10, LunchSelected11, LunchSelected12 } from "./lib/popUpLunch.js";
+import { createPopUpDinner, DinnerSelected0, DinnerSelected1, DinnerSelected2, DinnerSelected3, DinnerSelected4, DinnerSelected5, DinnerSelected6, DinnerSelected7, DinnerSelected8, DinnerSelected9, DinnerSelected10, DinnerSelected11, DinnerSelected12 } from "./lib/popUpDinner.js";
 
 const main = () => {
     // Variables 
@@ -32,6 +32,7 @@ const main = () => {
     breakfastRecipesArray.push(new recipe("B3", "Sandwich de pollo", ["Pechuga de pollo", "Cebolla", "Queso oaxaca", "Pan"]));
     breakfastRecipesArray.push(new recipe("B4", "Burritas", ["Tortillas", "Jamon", "Queso oaxaca", "Media crema", "Salsa verde"]));
     breakfastRecipesArray.push(new recipe("B5", "Avena con leche y fruta", ["Avena", "Leche", "Fruta", "Canela"]));
+    breakfastRecipesArray.push(new recipe("B6", "Libre", ["Libre"]));
 
     // Recettes "Lunch and Dinner" 
     recipesArray.push(new recipe("0", "Pechuga a la plancha con verduras y pastas", ["Pechuga de pollo", "Cebolla", "Pastas", "Verduras", "Salsa tomate"]))
@@ -46,6 +47,7 @@ const main = () => {
     recipesArray.push(new recipe("9", "Omelette", ["Huevos", "Champinones", "Queso oaxaca", "Pan"]));
     recipesArray.push(new recipe("10", "Quesadillas con champinones", ["Tortillas", "Queso oaxaca", "Jamon", "Champinones"]));
     recipesArray.push(new recipe("11", "Hamburguesa casera", ["Pan hamburguesa", "Pechuga de pollo", "Cebolla", "Lechuga", "Queso oaxaca", "Mayonessa / Ketchup"]));
+    recipesArray.push(new recipe("12", "Libre", ["Libre"]));
 
     // Bouton "new plan"
     document.getElementById("newPlan").addEventListener("click", () => {
@@ -93,6 +95,11 @@ const main = () => {
             document.getElementById('B5').addEventListener("click", (e) => {
                 elementSelectedB = 5;
                 BreakfastSelected5();
+            });
+
+            document.getElementById('B6').addEventListener("click", (e) => {
+                elementSelectedB = 6;
+                BreakfastSelected6();
             });
 
             document.getElementById("popUpButtonValidate").addEventListener("click", () => {
@@ -151,6 +158,11 @@ const main = () => {
                 BreakfastSelected5();
             });
 
+            document.getElementById('B6').addEventListener("click", (e) => {
+                elementSelectedB = 6;
+                BreakfastSelected6();
+            });
+
             document.getElementById("popUpButtonValidate").addEventListener("click", () => {
                 if (elementSelectedB === -1) {
                     return
@@ -204,6 +216,11 @@ const main = () => {
             document.getElementById('B5').addEventListener("click", (e) => {
                 elementSelectedB = 5;
                 BreakfastSelected5();
+            });
+
+            document.getElementById('B6').addEventListener("click", (e) => {
+                elementSelectedB = 6;
+                BreakfastSelected6();
             });
 
             document.getElementById("popUpButtonValidate").addEventListener("click", () => {
@@ -261,6 +278,11 @@ const main = () => {
                 BreakfastSelected5();
             });
 
+            document.getElementById('B6').addEventListener("click", (e) => {
+                elementSelectedB = 6;
+                BreakfastSelected6();
+            });
+
             document.getElementById("popUpButtonValidate").addEventListener("click", () => {
                 if (elementSelectedB === -1) {
                     return
@@ -314,6 +336,11 @@ const main = () => {
             document.getElementById('B5').addEventListener("click", (e) => {
                 elementSelectedB = 5;
                 BreakfastSelected5();
+            });
+
+            document.getElementById('B6').addEventListener("click", (e) => {
+                elementSelectedB = 6;
+                BreakfastSelected6();
             });
 
             document.getElementById("popUpButtonValidate").addEventListener("click", () => {
@@ -371,6 +398,11 @@ const main = () => {
                 BreakfastSelected5();
             });
 
+            document.getElementById('B6').addEventListener("click", (e) => {
+                elementSelectedB = 6;
+                BreakfastSelected6();
+            });
+
             document.getElementById("popUpButtonValidate").addEventListener("click", () => {
                 if (elementSelectedB === -1) {
                     return
@@ -424,6 +456,11 @@ const main = () => {
             document.getElementById('B5').addEventListener("click", (e) => {
                 elementSelectedB = 5;
                 BreakfastSelected5();
+            });
+
+            document.getElementById('B6').addEventListener("click", (e) => {
+                elementSelectedB = 6;
+                BreakfastSelected6();
             });
 
             document.getElementById("popUpButtonValidate").addEventListener("click", () => {
@@ -512,6 +549,11 @@ const main = () => {
                 LunchSelected11();
             });
 
+            document.getElementById('12').addEventListener("click", (e) => {
+                elementSelectedL = 12;
+                LunchSelected12();
+            });
+
             document.getElementById("popUpButtonValidate").addEventListener("click", () => {
                 if (elementSelectedL === -1) {
                     return
@@ -595,6 +637,11 @@ const main = () => {
             document.getElementById('11').addEventListener("click", (e) => {
                 elementSelectedL = 11;
                 LunchSelected11();
+            });
+
+            document.getElementById('12').addEventListener("click", (e) => {
+                elementSelectedL = 12;
+                LunchSelected12();
             });
 
             document.getElementById("popUpButtonValidate").addEventListener("click", () => {
@@ -682,6 +729,11 @@ const main = () => {
                 LunchSelected11();
             });
 
+            document.getElementById('12').addEventListener("click", (e) => {
+                elementSelectedL = 12;
+                LunchSelected12();
+            });
+
             document.getElementById("popUpButtonValidate").addEventListener("click", () => {
                 if (elementSelectedL === -1) {
                     return
@@ -765,6 +817,11 @@ const main = () => {
             document.getElementById('11').addEventListener("click", (e) => {
                 elementSelectedL = 11;
                 LunchSelected11();
+            });
+
+            document.getElementById('12').addEventListener("click", (e) => {
+                elementSelectedL = 12;
+                LunchSelected12();
             });
 
             document.getElementById("popUpButtonValidate").addEventListener("click", () => {
@@ -852,6 +909,11 @@ const main = () => {
                 LunchSelected11();
             });
 
+            document.getElementById('12').addEventListener("click", (e) => {
+                elementSelectedL = 12;
+                LunchSelected12();
+            });
+
             document.getElementById("popUpButtonValidate").addEventListener("click", () => {
                 if (elementSelectedL === -1) {
                     return
@@ -935,6 +997,11 @@ const main = () => {
             document.getElementById('11').addEventListener("click", (e) => {
                 elementSelectedL = 11;
                 LunchSelected11();
+            });
+
+            document.getElementById('12').addEventListener("click", (e) => {
+                elementSelectedL = 12;
+                LunchSelected12();
             });
 
             document.getElementById("popUpButtonValidate").addEventListener("click", () => {
@@ -1022,6 +1089,11 @@ const main = () => {
                 LunchSelected11();
             });
 
+            document.getElementById('12').addEventListener("click", (e) => {
+                elementSelectedL = 12;
+                LunchSelected12();
+            });
+
             document.getElementById("popUpButtonValidate").addEventListener("click", () => {
                 if (elementSelectedL === -1) {
                     return
@@ -1037,32 +1109,6 @@ const main = () => {
 
         }, 400)
     });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
     // POP UP DINNER 
@@ -1133,6 +1179,11 @@ const main = () => {
             document.getElementById('11').addEventListener("click", (e) => {
                 elementSelectedD = 11;
                 DinnerSelected11();
+            });
+
+            document.getElementById('12').addEventListener("click", (e) => {
+                elementSelectedD = 12;
+                DinnerSelected12();
             });
 
             document.getElementById("popUpButtonValidate").addEventListener("click", () => {
@@ -1220,6 +1271,11 @@ const main = () => {
                 DinnerSelected11();
             });
 
+            document.getElementById('12').addEventListener("click", (e) => {
+                elementSelectedD = 12;
+                DinnerSelected12();
+            });
+
             document.getElementById("popUpButtonValidate").addEventListener("click", () => {
                 if (elementSelectedD === -1) {
                     return
@@ -1303,6 +1359,11 @@ const main = () => {
             document.getElementById('11').addEventListener("click", (e) => {
                 elementSelectedD = 11;
                 DinnerSelected11();
+            });
+
+            document.getElementById('12').addEventListener("click", (e) => {
+                elementSelectedD = 12;
+                DinnerSelected12();
             });
 
             document.getElementById("popUpButtonValidate").addEventListener("click", () => {
@@ -1390,6 +1451,11 @@ const main = () => {
                 DinnerSelected11();
             });
 
+            document.getElementById('12').addEventListener("click", (e) => {
+                elementSelectedD = 12;
+                DinnerSelected12();
+            });
+
             document.getElementById("popUpButtonValidate").addEventListener("click", () => {
                 if (elementSelectedD === -1) {
                     return
@@ -1473,6 +1539,11 @@ const main = () => {
             document.getElementById('11').addEventListener("click", (e) => {
                 elementSelectedD = 11;
                 DinnerSelected11();
+            });
+
+            document.getElementById('12').addEventListener("click", (e) => {
+                elementSelectedD = 12;
+                DinnerSelected12();
             });
 
             document.getElementById("popUpButtonValidate").addEventListener("click", () => {
@@ -1560,6 +1631,11 @@ const main = () => {
                 DinnerSelected11();
             });
 
+            document.getElementById('12').addEventListener("click", (e) => {
+                elementSelectedD = 12;
+                DinnerSelected12();
+            });
+
             document.getElementById("popUpButtonValidate").addEventListener("click", () => {
                 if (elementSelectedD === -1) {
                     return
@@ -1643,6 +1719,11 @@ const main = () => {
             document.getElementById('11').addEventListener("click", (e) => {
                 elementSelectedD = 11;
                 DinnerSelected11();
+            });
+
+            document.getElementById('12').addEventListener("click", (e) => {
+                elementSelectedD = 12;
+                DinnerSelected12();
             });
 
             document.getElementById("popUpButtonValidate").addEventListener("click", () => {
